@@ -12,28 +12,16 @@
     width:45px;
     height: 45px;
 }
-.userIcon{
+.iconsBar{
     color:var(--white);
 }
-.userIcon :first-child:hover{
+.iconsBar :first-child:hover{
     width:45px;
     height: 45px;
 }
-.userIcon :first-child{
+.iconsBar :first-child{
     width:40px;
     height: 40px;
-}
-.menuIcon{
-    color:var(--white);
-    padding-top: 3%;
-}
-.menuIcon :first-child{
-    width:40px;
-    height: 40px;
-}
-.menuIcon :first-child:hover{
-    width:45px;
-    height: 45px;
 }
 .headerName{
     color:var(--white);
