@@ -1,0 +1,42 @@
+.navBar{
+    background-color:var(--blue);
+    position: fixed;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 10fr 2fr;
+    gap: 10px;
+    padding: 5px;
+
+}
+.navBar div{
+    width:45px;
+    height: 45px;
+}
+.userIcon{
+    color:var(--white);
+}
+.userIcon :first-child:hover{
+    width:45px;
+    height: 45px;
+}
+.userIcon :first-child{
+    width:40px;
+    height: 40px;
+}
+.menuIcon{
+    color:var(--white);
+    padding-top: 3%;
+}
+.menuIcon :first-child{
+    width:40px;
+    height: 40px;
+}
+.menuIcon :first-child:hover{
+    width:45px;
+    height: 45px;
+}
+.headerName{
+    color:var(--white);
+    margin: 0;
+    text-align: center;
+}
