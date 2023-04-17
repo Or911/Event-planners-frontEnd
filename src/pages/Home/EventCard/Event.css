@@ -1,0 +1,9 @@
+img{
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+}
+
+.eventCard {
+    background-color: darkgray; 
+}
