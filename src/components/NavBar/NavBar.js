@@ -1,14 +1,18 @@
 import './NavBar.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SideMenu from './SideMenu'
+import { useNavigate} from 'react-router-dom';
 export default function NavBar(){
+    const navigate = useNavigate();
+
 
     return(
         <div className='navBar'>
-            <div className='menuIcon'><SideMenu /></div>
+            <div className='iconsBar'><SideMenu/></div>  
             <h1 className='headerName'>event planner </h1>
-            <div className='userIcon'><AccountCircleIcon fontSize='large' /></div>
-            
+            <button className='loginBt' onClick={()=>navigate('/login')}>Login</button>
+            <div className='iconsBar'><AccountCircleIcon fontSize='large' /></div>
+    
         </div>
     )
 }

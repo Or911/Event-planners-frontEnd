@@ -1,8 +1,9 @@
 :root {
-  --blue: #1976D2;
+  --blue: #37306B;
+  --purple:#66347F;
+  --bordo:#9E4784;
   --white: #ffffff;
 }
-
 .page{
   padding-top: 100px;
 }

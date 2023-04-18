@@ -3,40 +3,34 @@
     position: fixed;
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 10fr 2fr;
+    grid-template-columns: 2fr 10fr 2fr 2fr;
     gap: 10px;
     padding: 5px;
+    z-index: 1;
 
 }
 .navBar div{
     width:45px;
     height: 45px;
 }
-.userIcon{
+.iconsBar{
     color:var(--white);
 }
-.userIcon :first-child:hover{
+.iconsBar :first-child:hover{
     width:45px;
     height: 45px;
 }
-.userIcon :first-child{
+.iconsBar :first-child{
     width:40px;
     height: 40px;
-}
-.menuIcon{
-    color:var(--white);
-    padding-top: 3%;
-}
-.menuIcon :first-child{
-    width:40px;
-    height: 40px;
-}
-.menuIcon :first-child:hover{
-    width:45px;
-    height: 45px;
 }
 .headerName{
     color:var(--white);
     margin: 0;
     text-align: center;
+}
+.loginBt{
+    background-color:var(--white);
+    border-radius: 5px;
+    color: var(--blue);
 }
