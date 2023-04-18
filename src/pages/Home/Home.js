@@ -17,7 +17,7 @@ export default function Home(){
           setEvents(EventsData);
         };
         getEventsData();
-      });
+      },[]);
 
     return(
         <div className="home page">
