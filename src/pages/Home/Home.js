@@ -16,6 +16,7 @@ export default function Home(){
           let EventsData = await getEvents();
           setEvents(EventsData);
         };
+        console.log("Home")
         getEventsData();
       }, []);
 
