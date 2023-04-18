@@ -28,39 +28,27 @@ export default function Menu() {
     }
 
     setActiveMenu({ ...activeMenu, [anchor]: open });
-  };
-
-  const list = (anchor) => (
-    <Box
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {pages.map((page , index) => (
-        <Link to={links[index]} key={index} className='linkSideM'>
-          <ListItem key={page}>
-            <ListItemButton>
-              {icons[index]}
-              <ListItemText primary={page} className='txtLinkM'/>
-            </ListItemButton>
-          </ListItem>
-        </Link>  
-        ))}   
-      </List>
-    </Box>
-  );
+  }
 
   return (
     <div>
-        <React.Fragment key={'left'}>
+        <Fragment key={'left'}>
           <Button onClick={toggleDrawer('left', true)}><MenuIcon sx={{ color: 'white'}} fontSize='large' /></Button>
-          <Drawer
-            anchor={'left'}
-            open={activeMenu['left']}
-            onClose={toggleDrawer('left', false)}
-          >
-            {list('left')}
+          <Drawer anchor={'left'} open={activeMenu['left']} onClose={toggleDrawer('left', false)}>
+            <Box role="presentation" onClick={toggleDrawer('left', false)} onKeyDown={toggleDrawer('left', false)}>
+              <List>
+                {pages.map((page , index) => (
+                <Link to={links[index]} key={index} className='linkSideM'>
+                  <ListItem key={page}>
+                    <ListItemButton>
+                      {icons[index]}
+                      <ListItemText primary={page} className='txtLinkM'/>
+                    </ListItemButton>
+                  </ListItem>
+                </Link>  
+                ))}   
+              </List>
+            </Box>
           </Drawer>
         </Fragment>
     </div>
