@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment, useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -14,8 +14,8 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import { Link } from "react-router-dom";
 
 export default function Menu() {
-  const [activeMenu, setActiveMenu] = React.useState({
-    menu: false,
+  const [activeMenu, setActiveMenu] = useState({
+    left: false,
   });
 
   const pages = ['Home', 'Create event', 'Tickets', 'About Us']
@@ -62,8 +62,7 @@ export default function Menu() {
           >
             {list('left')}
           </Drawer>
-        </React.Fragment>
-      
+        </Fragment>
     </div>
   );
 }
