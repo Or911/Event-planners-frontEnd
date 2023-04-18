@@ -3,12 +3,7 @@
   grid-template-columns: 50px auto auto auto 50px;
   grid-template-areas: "sliderButtonPerv sliderEvent1 sliderEvent2 sliderEvent3 sliderButtonNext";
 }
-/* @media only screen and (max-width: 500px) {
-    .homePage{
-        grid-template-columns: auto  ;
-        padding: 150px 0 0 20px;
-    }
-  } */
+
 
 .sliderButtonPerv{
     grid-area: sliderButtonPerv;
