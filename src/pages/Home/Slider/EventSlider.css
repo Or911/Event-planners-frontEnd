@@ -1,0 +1,23 @@
+.eventSlider {
+  display: grid;
+  grid-template-columns: 50px auto auto auto 50px;
+  grid-template-areas: "sliderButtonPerv sliderEvent1 sliderEvent2 sliderEvent3 sliderButtonNext";
+}
+
+.sliderButtonPerv{
+    grid-area: sliderButtonPerv;
+}
+
+.sliderEvent1{
+    grid-area: sliderEvent1;
+}
+.sliderEvent2{
+    grid-area: sliderEvent2;
+}
+.sliderEvent3{
+    grid-area: sliderEvent3;
+}
+
+.sliderButtonNext{
+    grid-area: sliderButtonNext;
+}
