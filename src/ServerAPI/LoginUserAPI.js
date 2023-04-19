@@ -2,7 +2,7 @@ import axios from "axios";
 const URL_SERVER = `http://localhost:4000/`
 
 
-function sginUp(userInput){
+function signUp(userInput){
 
      return axios.request({
         method: 'post',
@@ -19,4 +19,4 @@ function login(userInput){
   })
 }
 
-export {login , sginUp}
+export {login , signUp }

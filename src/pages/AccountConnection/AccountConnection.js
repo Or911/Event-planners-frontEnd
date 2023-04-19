@@ -1,5 +1,5 @@
 import './AccountConnection.css'
-import {sginUp , login} from '../../ServerAPI/LoginUserAPI'
+import {signUp , login} from '../../ServerAPI/LoginUserAPI'
 import CardLogin from './CardLogin/CardLogin'
 import { useNavigate} from 'react-router-dom';
 
@@ -8,7 +8,7 @@ export default function AccountConnection({updateLoggedIn}){
 
     function sendRequest(userInput ,typeRequest){
       if(typeRequest === "sign"){
-        sginUp(userInput)
+        signUp(userInput)
         .then((response) => {
           console.log(JSON.stringify(response.data));
         })

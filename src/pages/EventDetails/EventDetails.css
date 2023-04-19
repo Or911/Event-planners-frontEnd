@@ -1,0 +1,51 @@
+.event-details .cardEvent{
+    background-color: rgba(193, 199, 203, 0.592);
+    margin-top: 90px;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+.event-details img{
+    max-height: 300px;
+}
+
+.event-details .imgSection{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+.imgSection div h4{
+    margin-top: 15px;
+}
+.cardEvent{
+    position: relative;
+}
+.cardEvent hr{
+    width:60%;
+    text-align:left;
+    margin-left:0;
+    margin-bottom: 10px;
+}
+.cardEvent .priceSection{
+    position: absolute;
+    right:100px;
+    bottom: 100px;
+    
+}
+@media only screen and (min-width: 1350px) {
+    .event-details .cardEvent{
+        width: 70%;
+        margin-top: 0;
+        margin-left: 15%;
+    }
+    .event-details img{
+        max-height: 500px;
+    }
+  }
+  .description-Event{
+    line-break: anywhere;
+    max-width: 200px;
+    
+  }

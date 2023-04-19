@@ -1,40 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Event from "../EventCard/Event";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import './EventSlider.css'
 
 export default function EventSlider({ events }) {
-  const [slideIndex, setSlideIndex] = useState(1);
+  const LIMIT = 3
+  const [eventSlide, setEventSlide] = useState([]);
+  const [slideIndex, setSlideIndex] = useState(LIMIT);
+
+  useEffect(() => {
+    setEventSlide(events.slice(slideIndex - LIMIT , slideIndex));
+
+    console.log("EventSlider");
+  }, [events, slideIndex]);
 
   const nextSlide = function () {
     if (slideIndex !== events.length) {
       setSlideIndex(slideIndex + 1);
     } else {
-      setSlideIndex(1);
+      setSlideIndex(LIMIT);
     }
   };
 
   const prevSlide = function () {
-    if (slideIndex !== 1) {
+    if (slideIndex !== LIMIT) {
       setSlideIndex(slideIndex - 1);
-    } else {
-      setSlideIndex(events.length);
     }
   };
 
   return (
     <div className="eventSlider">
-        <span className="sliderEvent1">
-            <Event />
-        </span>
-        <span className="sliderEvent2">
-            <Event />
-        </span>
-        <span className="sliderEvent3">
-            <Event />
-        </span>
 
+        {eventSlide.map((userEvent , index) => (
+          <span key={index} className={`sliderEvent${index}`}>
+            <Event key={userEvent._id}  userEvent={userEvent}/>
+          </span>
+        ))}
         
         <span className="sliderButtonPerv">
             <button onClick={prevSlide}> <ArrowBackIcon /> </button>

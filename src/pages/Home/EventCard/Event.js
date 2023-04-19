@@ -1,18 +1,20 @@
 import React from 'react'
 import './Event.css'
+import { useNavigate} from 'react-router-dom';
 
-export default function Event() {
+export default function Event({userEvent}) {
+  const navigate = useNavigate();
   return (
     <div className='event'>
-        <div className='eventCard-container'>
+        <div className='eventCard-container'onClick={()=>navigate(`/events/${userEvent._id}`)}>
 
-          <span className=''>
-            <img src="https://img.freepik.com/free-vector/party-crowd-banner-against-sunset-sky_1048-12631.jpg?w=1380&t=st=1681730966~exp=1681731566~hmac=c18338cf51e2c3af5e5de80ac67f6fa74c0cced3c9fe07f35eaea181988c35b9" alt=''/>
-            <div> world </div>
+          <span>
+            <img src={userEvent?.img} alt=''/>
+            <div> {userEvent?.name} by {userEvent?.organizer}</div>
           </span>
 
-          <span className=''>
-            <div> 23.05  Dimona , Nava David</div>
+          <span>
+            <div> {userEvent?.date}  {userEvent?.location}</div>
           </span>
         </div>
 

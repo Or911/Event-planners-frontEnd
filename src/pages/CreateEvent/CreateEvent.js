@@ -54,8 +54,14 @@ export default function CreateEvent() {
     setDateCreated('');
     setImg('');
   }
+
+  /*async function selectedImg(event){
+    let img = await uploadImg(event.target.files[0])
+    console.log(img)
+  }*/
+    
   return (
-    <div className='page'>
+    
       <div className='eventCreate '>
         <form >
           <div className="eventDiv">
@@ -134,12 +140,10 @@ export default function CreateEvent() {
           onChange={event => setEventDate(event.target.value)}
           value={img}
            />
-          
           </div>
-
           <button className="btn" onClick={addEvent} type="submit" >Create</button>
         </form>
       </div>
-    </div>
+  
   )
 }

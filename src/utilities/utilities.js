@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-// function selctedFile(event){
-//     uplaodImg(event.target.files[0])
-//   }
-function uplaodImg(img){
+
+function uploadImg(img){
 var form = new FormData();
+console.log(form)
 form.append("image", img);
 
 var settings = {
@@ -19,4 +18,4 @@ var settings = {
 
 return axios(settings).then(response => response.data.data.url)
 }
-export {uplaodImg }
+export {uploadImg  }
