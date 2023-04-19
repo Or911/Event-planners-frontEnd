@@ -1,5 +1,5 @@
 import React from 'react'
-import { uploadImg } from '../../utilities/utilities'
+import { uploadImg } from '../../utilities/uploadImg'
 
 export default function CreateEvent() {
 

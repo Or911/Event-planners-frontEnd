@@ -1,9 +1,15 @@
 :root {
-  --blue: #37306B;
-  --purple:#66347F;
+  --fade: #67646457;
+  --purple:#77037B;
   --bordo:#9E4784;
   --white: #ffffff;
 }
 .page{
   padding-top: 100px;
+}
+.background{
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }

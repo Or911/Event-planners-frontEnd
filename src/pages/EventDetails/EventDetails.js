@@ -4,8 +4,10 @@ import { getEventData } from '../../ServerAPI/EventAPI';
 import './EventDetails.css'
 import { Button } from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { useNavigate} from 'react-router-dom';
 
 export default function EventDetails() {
+  const navigate = useNavigate();
   const [eventData , setEventData] = useState({})
   let { id } = useParams();
 
@@ -36,7 +38,7 @@ export default function EventDetails() {
           <h2>Description:</h2>
           <p className='description-Event'>{eventData.description}</p>
           <hr/>
-          <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon  />}>
+          <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon/>} onClick={()=>navigate('/')}>
             buy a ticket
           </Button>
           <div className='priceSection'>
