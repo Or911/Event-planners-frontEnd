@@ -1,15 +1,15 @@
 import React from 'react'
-import { uplaodImg } from '../../utilitis/uploadIMG'
+import { uploadImg } from '../../utilities/utilities'
 
 export default function CreateEvent() {
 
-    async function selctedImg(event){
-    let img = await uplaodImg(event.target.files[0])
+    async function selectedImg(event){
+    let img = await uploadImg(event.target.files[0])
     console.log(img)
   }
   return (
     <div className='page'>
-        <input type="file" id="myFile" onChange={selctedImg}/>
+        <input type="file" id="myFile" onChange={selectedImg}/>
         <input type="submit" />
     </div>
   )
