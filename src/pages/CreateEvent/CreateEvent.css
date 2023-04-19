@@ -1,0 +1,46 @@
+.eventCreate {
+    height: 200%;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: rgb(67, 126, 133);
+}
+
+#eventContainer {
+    width: 80vh;
+    display: grid;
+    grid-template-areas:
+        "m";
+    background-color: white;
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.eventDiv {
+    display: grid;
+    width: 30vh;
+    height: 5vh;
+    align-content: center;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+
+.btn {
+    border-radius: 5px;
+    text-align: center;
+    width: 27vh;
+    height: 5vh;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    border: none;
+    margin: 1.6rem;
+    padding: 1rem;
+}

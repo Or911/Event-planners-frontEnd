@@ -15,7 +15,7 @@ export default function Menu() {
   });
 
   const pages = ['Home', 'Create event', 'Tickets']
-  const links = ['/', '/', '/']
+  const links = ['/', '/createEvent', '/']
   const icons = [<MenuIcon/> , <MenuIcon/> , <MenuIcon/>]
 
   const toggleDrawer = (anchor, open) => (event) => {

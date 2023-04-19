@@ -1,7 +1,143 @@
 import React from 'react'
-
+import './CreateEvent.css'
+import { useState } from 'react'
 export default function CreateEvent() {
+  let id = 0
+  const eventId = useState(id)
+  id += 1
+  const [name, setName] = useState("")
+  const [organizer, setOrganizer] = useState("")
+  const [entertainer, setEntertainer] = useState("")
+  const [category, setCategory] = useState("")
+  const [description, setDescription] = useState("")
+  const [price, setPrice] = useState("")
+  const [like, setLike] = useState(0)
+  const [location, setLocation] = useState("")
+  const [eventDate, setEventDate] = useState(new Date())
+  const [dateCreated, setDateCreated] = useState(new Date())
+  const [img, setImg] = useState(null)
+
+  const addEvent = (event) => {
+    fetch('http://localhost:4000/events', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        eventId: eventId,
+        name: name,
+        organizer: organizer,
+        entertainer: entertainer,
+        category: category,
+        description: description,
+        price: price,
+        like: like,
+        location: location,
+        eventDate: eventDate,
+        dateCreated: dateCreated,
+        img:img,
+      }),
+    });
+    setName('');
+    setOrganizer('');
+    setEntertainer('');
+    setCategory('');
+    setDescription('');
+    setPrice('');
+    setLike('');
+    setLocation('');
+    setEventDate('');
+    setDateCreated('');
+    setImg('');
+  }
   return (
-    <div>CreateEvent</div>
+    <div className='page'>
+      <div className='eventCreate '>
+        <form >
+          <div className="eventDiv">
+            <input
+              placeholder="name"
+              type="text"
+              onChange={event => setName(event.target.value)}
+              value={name}
+            />
+          </div>
+
+          <div className="eventDiv">
+            <input
+              placeholder="Organizer"
+              type="text"
+              onChange={event => setOrganizer(event.target.value)}
+              value={organizer}
+            />
+          </div>
+
+          <div className="eventDiv">
+            <input
+              placeholder="Entertainer"
+              type="text"
+              onChange={event => setEntertainer(event.target.value)}
+              value={entertainer}
+            />
+          </div>
+
+          <div className="eventDiv">
+            <input
+              placeholder="Category"
+              type="text"
+              onChange={event => setCategory(event.target.value)}
+              value={category}
+            />
+          </div>
+
+          <div className="eventDiv">
+            <input
+              placeholder="Description"
+              type="text"
+              onChange={event => setDescription(event.target.value)}
+              value={description}
+            />
+          </div>
+          <div className="eventDiv">
+            <input
+              placeholder="Price"
+              type="number"
+              onChange={event => setPrice(event.target.value)}
+              value={price}
+            />
+          </div>
+          <div className="eventDiv">
+            <input
+              
+              placeholder="Location"
+              type="text"
+              onChange={event => setLocation(event.target.value)}
+              value={location}
+            />
+          </div>
+          <div className="eventDiv">
+            <input
+              
+              type="date"
+              onChange={event => setEventDate(event.target.value)}
+              value={eventDate}
+              />
+          </div>
+
+          <div className="eventDiv">
+          <input 
+          type="file" 
+          multiple accept="image/*" 
+          onChange={event => setEventDate(event.target.value)}
+          value={img}
+           />
+          
+          </div>
+
+          <button className="btn" onClick={addEvent} type="submit" >Create</button>
+        </form>
+      </div>
+    </div>
   )
 }
