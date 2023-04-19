@@ -26,13 +26,13 @@ export default function EventSlider({ events }) {
   return (
     <div className="eventSlider">
         <span className="sliderEvent1">
-            <Event />
+            <Event event={events[slideIndex]}/>
         </span>
         <span className="sliderEvent2">
-            <Event />
+            <Event event={events[slideIndex + 1]} />
         </span>
         <span className="sliderEvent3">
-            <Event />
+            <Event event={events[slideIndex + 2]} />
         </span>
 
         
