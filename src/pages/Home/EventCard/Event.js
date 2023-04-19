@@ -1,18 +1,18 @@
 import React from 'react'
 import './Event.css'
 
-export default function Event({event}) {
+export default function Event({event: userEvent}) {
   return (
     <div className='event'>
         <div className='eventCard-container'>
 
           <span>
-            <img src={event?.img} alt=''/>
-            <div> {event?.name} by {event?.organizer}</div>
+            <img src={userEvent?.img} alt=''/>
+            <div> {userEvent?.name} by {userEvent?.organizer}</div>
           </span>
 
           <span>
-            <div> {event?.date}  {event?.location}</div>
+            <div> {userEvent?.date}  {userEvent?.location}</div>
           </span>
         </div>
 
