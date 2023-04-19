@@ -9,4 +9,11 @@ function getEvents() {
   });
 }
 
-export { getEvents };
+function getEventData(idEvent) {
+  return axios.request({
+    method: "get",
+    url: URL_SERVER + "event/" + idEvent,
+  });
+}
+
+export { getEvents , getEventData};
