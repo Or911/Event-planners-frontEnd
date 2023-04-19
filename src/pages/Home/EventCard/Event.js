@@ -2,19 +2,19 @@ import React from 'react'
 import './Event.css'
 import { useNavigate} from 'react-router-dom';
 
-export default function Event({event}) {
+export default function Event({userEvent}) {
   const navigate = useNavigate();
   return (
     <div className='event'>
-        <div className='eventCard-container'onClick={()=>navigate(`/events/${event._id}`)}>
+        <div className='eventCard-container'onClick={()=>navigate(`/events/${userEvent._id}`)}>
 
           <span>
-            <img src={event?.img} alt=''/>
-            <div> {event?.name} by {event?.organizer}</div>
+            <img src={userEvent?.img} alt=''/>
+            <div> {userEvent?.name} by {userEvent?.organizer}</div>
           </span>
 
           <span>
-            <div> {event?.date}  {event?.location}</div>
+            <div> {userEvent?.date}  {userEvent?.location}</div>
           </span>
         </div>
 

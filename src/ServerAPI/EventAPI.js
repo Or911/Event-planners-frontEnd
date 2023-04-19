@@ -1,6 +1,14 @@
 import axios from "axios";
 const URL_SERVER = `http://localhost:4000/`;
 
+function getEventsCategory() {
+    
+    return axios.request({
+      method: "get",
+      url: URL_SERVER + "eventsCategory",
+    });
+  }
+
 function getEvents() {
     
   return axios.request({
@@ -16,4 +24,4 @@ function getEventData(idEvent) {
   });
 }
 
-export { getEvents , getEventData};
+export { getEvents , getEventData , getEventsCategory};
