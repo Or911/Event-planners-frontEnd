@@ -3,7 +3,7 @@
     position: fixed;
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 10fr 2fr 2fr;
+    grid-template-columns: 2fr 16fr 2fr 3fr;
     gap: 10px;
     padding: 5px;
     z-index: 1;
@@ -15,6 +15,7 @@
 }
 .iconsBar{
     color:var(--white);
+    position: relative;
 }
 .iconsBar :first-child:hover{
     width:45px;
@@ -33,4 +34,31 @@
     background-color:var(--white);
     border-radius: 5px;
     color: var(--blue);
+    margin: 0;
+    font-size: 12px;
+    padding: 0;
 }
+.linkSideM{
+    color: var(--blue);
+    display: grid;
+    text-decoration: none;
+    
+}
+.txtLinkM{
+    margin-left: 20px;
+}
+.iconsBar h3{
+    color: var(--white);
+     position: absolute;
+     right: -20px;
+    top: 5px; 
+}
+
+@media only screen and (max-width: 500px) {
+    .iconsBar h3{
+
+         position: static;
+         right: 0;
+        top: 0; 
+    }
+  }

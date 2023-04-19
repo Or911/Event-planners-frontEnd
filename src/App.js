@@ -4,15 +4,22 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import AccountConnection from "./pages/AccountConnection/AccountConnection";
 import CreateEvent from "./pages/CreateEvent/CreateEvent";
+import { useState } from 'react';
 
 function App() {
+  const [isLogin , updateIsLogin] = useState(false)
+
+  function updateLoggedIn(isLog){
+    if(isLog){updateIsLogin(true)}
+    else{updateIsLogin(false)}
+  }
 
   return (
     <Router>
-      <NavBar/>
+      <NavBar isLogin={isLogin} updateLoggedIn={updateLoggedIn} />
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<AccountConnection/>}/>
+        <Route path="/login" element={<AccountConnection updateLoggedIn={updateLoggedIn}/>}/>
         <Route path="/createEvent" element={<CreateEvent/>}/>
         <Route path="/AboutUs" />
       </Routes>
