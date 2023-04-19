@@ -5,43 +5,38 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import './EventSlider.css'
 
 export default function EventSlider({ events }) {
-  const LIMIT = events.length / 2
+  const LIMIT = 3
   const [eventSlide, setEventSlide] = useState([]);
-
-  const eventsArrLimit = function(indexStarting){
-    return events.slice(indexStarting , indexStarting + LIMIT);
-  }
+  const [slideIndex, setSlideIndex] = useState(LIMIT);
 
   useEffect(() => {
-    setEventSlide(eventsArrLimit(0));
+    setEventSlide(events.slice(slideIndex - LIMIT , slideIndex));
 
     console.log("EventSlider");
-  }, []);
+  }, [events, slideIndex]);
 
   const nextSlide = function () {
-    if (eventSlide.length + 1  < events.length) {
-      setEventSlide(eventsArrLimit(eventSlide.length + 1))
+    if (slideIndex !== events.length) {
+      setSlideIndex(slideIndex + 1);
     } else {
-      setEventSlide(eventsArrLimit(0))
+      setSlideIndex(LIMIT);
     }
   };
 
   const prevSlide = function () {
-    if (eventSlide.length !== LIMIT) {
-      setEventSlide(eventsArrLimit(eventSlide.length - 1))
-    } else {
-      setEventSlide(eventsArrLimit(LIMIT))
+    if (slideIndex !== LIMIT) {
+      setSlideIndex(slideIndex - 1);
     }
   };
 
   return (
     <div className="eventSlider">
-        <span className="sliderEvent">
-          {eventSlide.map((userEvent) => (
-            <Event key={userEvent._id}  userEvent={userEvent}/>
-          ))}
-        </span>
 
+        {eventSlide.map((userEvent , index) => (
+          <span key={index} className={`sliderEvent${index}`}>
+            <Event key={userEvent._id}  userEvent={userEvent}/>
+          </span>
+        ))}
         
         <span className="sliderButtonPerv">
             <button onClick={prevSlide}> <ArrowBackIcon /> </button>

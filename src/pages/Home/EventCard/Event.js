@@ -1,7 +1,7 @@
 import React from 'react'
 import './Event.css'
 
-export default function Event({event: userEvent}) {
+export default function Event({userEvent}) {
   return (
     <div className='event'>
         <div className='eventCard-container'>
