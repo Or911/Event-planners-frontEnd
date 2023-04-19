@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import AccountConnection from "./pages/AccountConnection/AccountConnection";
 import CreateEvent from "./pages/CreateEvent/CreateEvent";
 import { useState } from 'react';
+import EventDetails from "./pages/EventDetails/EventDetails";
 
 function App() {
   const [isLogin , updateIsLogin] = useState(false)
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<AccountConnection updateLoggedIn={updateLoggedIn}/>}/>
         <Route path="/createEvent" element={<CreateEvent/>}/>
         <Route path="/AboutUs" />
+        <Route path="/events/:id" element={<EventDetails/>} />
       </Routes>
     </Router>
   )
