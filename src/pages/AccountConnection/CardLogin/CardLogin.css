@@ -12,7 +12,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-a{
+.cardLogin a{
 text-decoration: none;
 }
 .cardLogin {
@@ -42,13 +42,13 @@ text-decoration: none;
   text-align: center;
 }
 
-label {
+.cardLogin label {
   display: block;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
-input {
+.cardLogin input {
   display: block;
   height: 50px;
   width: 100%;
@@ -63,7 +63,7 @@ input {
 ::placeholder {
   color: #e5e5e5;
 }
-button {
+.cardLogin button {
   margin-top: 50px;
   width: 100%;
   background-color: var(--purple);

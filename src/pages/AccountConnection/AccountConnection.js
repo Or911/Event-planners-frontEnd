@@ -3,7 +3,7 @@ import {sginUp , login} from '../../ServerAPI/LoginUserAPI'
 import CardLogin from './CardLogin/CardLogin'
 import { useNavigate} from 'react-router-dom';
 
-export default function AccountConnection(){
+export default function AccountConnection({updateLoggedIn}){
   const navigate = useNavigate();
 
     function sendRequest(userInput ,typeRequest){
@@ -19,8 +19,9 @@ export default function AccountConnection(){
       if(typeRequest === "login"){
         login(userInput)
         .then((token) => {
-          console.log(token)
+          updateLoggedIn(true)
           localStorage.setItem("token" ,token.data.token )
+          localStorage.setItem("userName" ,userInput.username )
           navigate(-1)
         })
         .catch((error) => {

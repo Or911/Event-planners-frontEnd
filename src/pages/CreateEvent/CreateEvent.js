@@ -1,6 +1,7 @@
 import React from 'react'
 import './CreateEvent.css'
 import { useState } from 'react'
+import axios from 'axios'
 export default function CreateEvent() {
   let id = 0
   const eventId = useState(id)
@@ -10,34 +11,36 @@ export default function CreateEvent() {
   const [entertainer, setEntertainer] = useState("")
   const [category, setCategory] = useState("")
   const [description, setDescription] = useState("")
-  const [price, setPrice] = useState("")
-  const [like, setLike] = useState(0)
+  const [price, setPrice] = useState(0)
+  const [like, setLike] = useState([])
   const [location, setLocation] = useState("")
   const [eventDate, setEventDate] = useState(new Date())
   const [dateCreated, setDateCreated] = useState(new Date())
-  const [img, setImg] = useState(null)
+  const [img, setImg] = useState("")
+
 
   const addEvent = (event) => {
-    fetch('http://localhost:4000/events', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
+    
+    axios({
+      method:'post',
+      url:'http://localhost:4000/events',
+      data: {
         eventId: eventId,
         name: name,
         organizer: organizer,
         entertainer: entertainer,
         category: category,
         description: description,
-        price: price,
+        price: [{"standard":price}],
         like: like,
         location: location,
         eventDate: eventDate,
         dateCreated: dateCreated,
         img:img,
-      }),
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      }
     });
     setName('');
     setOrganizer('');
@@ -118,7 +121,6 @@ export default function CreateEvent() {
           </div>
           <div className="eventDiv">
             <input
-              
               type="date"
               onChange={event => setEventDate(event.target.value)}
               value={eventDate}
