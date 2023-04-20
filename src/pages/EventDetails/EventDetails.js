@@ -4,12 +4,10 @@ import { getEventData } from '../../ServerAPI/EventAPI';
 import './EventDetails.css'
 import { Button } from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import { useNavigate} from 'react-router-dom';
 import ButtonBack from '../../components/NavBar/ButtonBack/ButtonBack';
 import { createTicket } from "../../ServerAPI/TicketAPI";
 
 export default function EventDetails() {
-  const navigate = useNavigate();
   const [eventData , setEventData] = useState({})
   let { id } = useParams();
 

@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import Event from "./EventCard/Event";
 import { getEvents , getEventsCategory } from "../../ServerAPI/EventAPI";
 import "./Home.css";
