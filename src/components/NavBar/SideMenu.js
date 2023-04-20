@@ -33,7 +33,7 @@ export default function Menu() {
   return (
     <div>
         <Fragment key={'left'}>
-          <Button onClick={toggleDrawer('left', true)}><MenuIcon sx={{ color: 'white'}} fontSize='large' /></Button>
+          <Button onClick={toggleDrawer('left', true)}><MenuIcon sx={{ color: 'white'}} fontSize='large'/></Button>
           <Drawer anchor={'left'} open={activeMenu['left']} onClose={toggleDrawer('left', false)}>
             <Box role="presentation" onClick={toggleDrawer('left', false)} onKeyDown={toggleDrawer('left', false)}>
               <List>

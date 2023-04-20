@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className="home page">
-        <Container maxWidth="sm">
+        <Container maxWidth="lg">
 
             <Event userEvent={events[0]}/>
             <EventSlider events={events} />

@@ -1,5 +1,4 @@
 .loginPage {
-  background-color: rgba(52, 52, 53, 0.379);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -18,7 +17,7 @@ text-decoration: none;
 .cardLogin {
   height: 520px;
   width: 400px;
-  background-color: rgba(255, 255, 255, 0.964);
+  background-color: rgba(255, 255, 255, 0.234);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 55%;
@@ -95,9 +94,4 @@ text-decoration: none;
 }
 .social i {
   margin-right: 4px;
-}
-.cardLogin .CloseIcon{
-  position: absolute;
-  right:5px;
-  top: 5px;
 }

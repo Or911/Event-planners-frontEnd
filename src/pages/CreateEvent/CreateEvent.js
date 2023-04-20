@@ -2,7 +2,8 @@ import React from 'react'
 import './CreateEvent.css'
 import { useState } from 'react'
 import axios from 'axios'
-import FileBase64 from 'react-file-base64';
+import { uploadImg } from '../../utilities/uploadImg';
+
 export default function CreateEvent() {
   const [name, setName] = useState("")
   const [organizer, setOrganizer] = useState("")
@@ -14,10 +15,10 @@ export default function CreateEvent() {
   const [location, setLocation] = useState("")
   const [eventDate, setEventDate] = useState(new Date())
   const [dateCreated, setDateCreated] = useState(new Date())
-  const [file, setFile] = useState("");
 
-  const addEvent = (event) => {
 
+  const addEvent = async ()  => {
+    let imgUrl = await uploadImg(document.getElementById('imgInput').files[0])
     axios({
       method: 'post',
       url: 'http://localhost:4000/event',
@@ -32,12 +33,13 @@ export default function CreateEvent() {
         location: location,
         eventDate: eventDate,
         dateCreated: dateCreated,
-        img: file,
+        img: imgUrl,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       }
-    });
+    }).then(data => console.log(data))
+
     setName('');
     setOrganizer('');
     setEntertainer('');
@@ -48,13 +50,8 @@ export default function CreateEvent() {
     setLocation('');
     setEventDate('');
     setDateCreated('');
-    setFile('');
+    // document.getElementById('imgInput').reset()
   }
-
-  /*async function selectedImg(event){
-    let img = await uploadImg(event.target.files[0])
-    console.log(img)
-  }*/
 
   return (
 
@@ -130,12 +127,12 @@ export default function CreateEvent() {
         </div>
 
         <div className="eventDiv">
-
-          <FileBase64
-            multiple={false}
-            onDone={({base64})=> setFile(base64)} />
+          <input  type="file" 
+          multiple accept="image/*" 
+          id='imgInput'
+          />
         </div>
-        <button className="btn" onClick={addEvent} type="submit" >Create</button>
+        <div className='buttonSubmitCreate' onClick={addEvent}>Create</div>
       </form>
     </div>
 
