@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Event from "../EventCard/Event";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import './EventSlider.css'
 
 export default function EventSlider({ events }) {
@@ -39,10 +39,10 @@ export default function EventSlider({ events }) {
         ))}
         
         <span className="sliderButtonPerv">
-            <button onClick={prevSlide}> <ArrowBackIcon /> </button>
+            <div onClick={prevSlide}> <KeyboardArrowLeftIcon fontSize='large' className="arrowBT"/> </div>
         </span>
         <span className="sliderButtonNext">
-            <button onClick={nextSlide}> <ArrowForwardIcon /></button>
+            <div onClick={nextSlide}> <KeyboardArrowRightIcon fontSize="large" className="arrowBT"/></div>
         </span>
     </div>
   );

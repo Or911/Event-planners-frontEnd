@@ -21,19 +21,19 @@ export default function Home() {
 
   return (
     <div className="home page">
-        <Container maxWidth="lg">
 
-            <Event userEvent={events[0]}/>
-            <EventSlider events={events} />
+            <div className="Event-slider"><EventSlider events={events} /></div>
 
             {eventsCategory.map(({_id , events}) => (
+              <>
+                <h1> Category : {_id} </h1>
                 <div className="eventsCategory" key={_id}>
-                    <h1> Category : {_id} </h1>
+                    
                     {events.map((e) => (<Event key={e._id} userEvent={e}/>) )
                 }
                 </div>
+              </>  
             ))}
-      </Container>
     </div>
   );
 }
