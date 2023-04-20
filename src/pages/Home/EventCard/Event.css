@@ -22,13 +22,13 @@
 }
 .eventSlider .imgEvent{
   width: 100%;
-  
+  transition: 0.5s;
   height: 200px;
 }
 .evenDetails{
   position: absolute;
   bottom: -30%;
-  
+  transition: 1s;
   background-color: rgba(10, 12, 14, 0.624);
   color: white;
   text-align: center;
