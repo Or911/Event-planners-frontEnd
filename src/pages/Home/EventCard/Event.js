@@ -5,6 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export default function Event({userEvent}) {
+    // let link = `https://waze.com/ul?q=${userEvent?.location}&navigate=yes`
   let link = `http://maps.google.com/maps?daddr=${userEvent?.location}&dir_action=navigate`
   const navigate = useNavigate();
   return (
@@ -14,7 +15,7 @@ export default function Event({userEvent}) {
 
             <div className='evenDetails' > 
             <KeyboardArrowUpIcon/>
-            <p onClick={()=>navigate(`/events/${userEvent._id}`)}>{userEvent?.name} </p>
+            <p>{userEvent?.name} </p>
             <a href={link}>{userEvent?.location}<LocationOnIcon /></a></div>
 
         </div>
