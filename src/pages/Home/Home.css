@@ -1,4 +1,27 @@
-
+.home{
+    margin-left: 5%;
+}
+.Event-slider{
+    margin-left: 0%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    width: 90%;
+    background-color: rgba(32, 33, 35, 0.526);
+    padding: 10px;
+    display: block;
+}
 .eventsCategory{
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.eventsCategory{
+    background-color: rgba(201, 128, 110, 0.293);
+    padding: 20px;
+    width: 90%;
+}
+.home h1{
+    margin: 5% 0 0 1%;
+}
+.eventsCategory .eventCard-container{
+    width: 250px;
 }
