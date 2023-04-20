@@ -8,6 +8,15 @@
   border-radius: 10px;
   box-shadow: 2px 2px 15px 0px;
 }
+@media only screen and (max-width: 500px) {
+   .ticket{
+      width: 90%;
+   }
+
+   .ticket-text div{
+      width: 70%;
+    }
+ }
 .ticket:before,
 .ticket:after {
   content: "";
@@ -54,5 +63,5 @@
 .ticket-img {
    position: absolute;
    z-index: -1;
-   opacity : 0.3;
+   opacity : 0.1;
 }
