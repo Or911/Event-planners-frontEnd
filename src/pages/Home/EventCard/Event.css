@@ -45,3 +45,6 @@
   bottom: 0%;
   transition: 1s;
 }
+.eventCard-container a{
+  color: white;
+}

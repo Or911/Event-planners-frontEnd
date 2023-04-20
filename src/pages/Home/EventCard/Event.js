@@ -5,16 +5,17 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export default function Event({userEvent}) {
+  let link = `http://maps.google.com/maps?daddr=${userEvent?.location}&dir_action=navigate`
   const navigate = useNavigate();
   return (
-        <div className='eventCard-container'onClick={()=>navigate(`/events/${userEvent._id}`)}>
-            <img src={userEvent?.img} alt={userEvent?.name} className='imgEvent'/>
+        <div className='eventCard-container' >
+            <img src={userEvent?.img} alt={userEvent?.name} className='imgEvent' onClick={()=>navigate(`/events/${userEvent._id}`)}/>
             <div> {userEvent?.name}  {userEvent?.organizer}</div>
 
             <div className='evenDetails' > 
             <KeyboardArrowUpIcon/>
-            <p>{userEvent?.name} </p>
-            <p>{userEvent?.location}<LocationOnIcon /></p></div>
+            <p onClick={()=>navigate(`/events/${userEvent._id}`)}>{userEvent?.name} </p>
+            <a href={link}>{userEvent?.location}<LocationOnIcon /></a></div>
 
         </div>
   )

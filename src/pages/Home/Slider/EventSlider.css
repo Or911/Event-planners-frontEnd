@@ -35,3 +35,12 @@
     transition: 0.5s;
     
 }
+/* @media only screen and (max-width: 500px) {
+    .eventSlider{
+        display: grid;
+  grid-template-columns:  auto auto auto auto ;
+  grid-template-areas: "sliderButtonPerv sliderEvent1 sliderEvent2 sliderEvent3 sliderButtonNext";
+
+    }
+
+  } */
