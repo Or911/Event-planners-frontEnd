@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Router>
-      <img src={background} className="background"/>
+      <img src={background} className="background" alt=""/>
       <NavBar isLogin={isLogin} updateLoggedIn={updateLoggedIn} />
       <Routes>
         <Route path="/" element={<Home/>}/>

@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { useNavigate} from 'react-router-dom';
 import ButtonBack from '../../components/NavBar/ButtonBack/ButtonBack';
+import { createTicket } from "../../ServerAPI/TicketAPI";
 
 export default function EventDetails() {
   const navigate = useNavigate();
@@ -19,6 +20,10 @@ export default function EventDetails() {
     });
     console.log("EventDetails");
   },[]);
+
+  const buyTicket = function(){
+    createTicket(eventData._id , eventData.price[0].standard)
+  }
 
   return (
     <div className='page event-details'>
@@ -40,7 +45,7 @@ export default function EventDetails() {
           <h2>Description:</h2>
           <p className='description-Event'>{eventData.description}</p>
           <hr/>
-          <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon/>} onClick={()=>navigate('/')}>
+          <Button onClick={buyTicket} variant="contained" endIcon={<ShoppingCartCheckoutIcon  />}>
             buy a ticket
           </Button>
           <div className='priceSection'>
