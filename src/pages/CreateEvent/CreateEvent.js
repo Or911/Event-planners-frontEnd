@@ -24,7 +24,7 @@ export default function CreateEvent() {
       url: 'http://localhost:4000/event',
       data: {
         name: name,
-        organizer: organizer,
+        // organizer: organizer,
         entertainer: entertainer,
         category: category,
         description: description,
@@ -66,14 +66,14 @@ export default function CreateEvent() {
           />
         </div>
 
-        <div className="eventDiv">
+        {/* <div className="eventDiv">
           <input
             placeholder="Organizer"
             type="text"
             onChange={event => setOrganizer(event.target.value)}
             value={organizer}
           />
-        </div>
+        </div> */}
 
         <div className="eventDiv">
           <input
