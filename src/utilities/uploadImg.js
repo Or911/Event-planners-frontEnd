@@ -3,7 +3,6 @@ import axios from 'axios';
 
 function uploadImg(img){
 var form = new FormData();
-console.log(form)
 form.append("image", img);
 
 var settings = {

@@ -1,0 +1,10 @@
+.CloseBT{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.CloseBT:hover{
+    color: red;
+    transform: scale(1.5);
+    transition: 1s;
+}

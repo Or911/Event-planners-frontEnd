@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
 import './CardLogin.css'
-import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate} from 'react-router-dom';
+import ButtonBack from '../../../components/NavBar/ButtonBack/ButtonBack';
 
 export default function CardLogin({sendRequest}){
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function CardLogin({sendRequest}){
         <div className='loginPage'>
             <div className='cardLogin'>
                 <h3>{statusPage.h3}</h3>
-                <div className='CloseIcon' onClick={()=>navigate(-1)}><CloseIcon /></div>
+                <ButtonBack/>
                 <label >Username</label>
                 <input type="text" placeholder="Username" required onChange={(event)=>setUserInput({...userInput , username:event.target.value})}/>
                 <label >Password</label>

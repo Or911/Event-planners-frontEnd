@@ -5,6 +5,7 @@ import './EventDetails.css'
 import { Button } from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { useNavigate} from 'react-router-dom';
+import ButtonBack from '../../components/NavBar/ButtonBack/ButtonBack';
 
 export default function EventDetails() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function EventDetails() {
   return (
     <div className='page event-details'>
         <div className='cardEvent'>
+          <ButtonBack/>
           <div className='imgSection'>
             <img src={eventData.img} alt={eventData.name}/>
             <div>

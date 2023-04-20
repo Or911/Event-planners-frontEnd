@@ -19,7 +19,6 @@ export default function CreateEvent() {
 
   const addEvent = async ()  => {
     let imgUrl = await uploadImg(document.getElementById('imgInput').files[0])
-    console.log(document.getElementById('imgInput').files[0])
     axios({
       method: 'post',
       url: 'http://localhost:4000/event',
