@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Event from "../EventCard/Event";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import './EventSlider.css'
+import { useNavigate} from 'react-router-dom';
 
 export default function EventSlider({ events }) {
-  const LIMIT = 3
+  const navigate = useNavigate();
+  const LIMIT = 1
   const [eventSlide, setEventSlide] = useState([]);
   const [slideIndex, setSlideIndex] = useState(LIMIT);
 
@@ -31,16 +32,20 @@ export default function EventSlider({ events }) {
 
   return (
     <div className="eventSlider">
-
-        {eventSlide.map((userEvent , index) => (
-          <span key={index} className={`sliderEvent${index}`}>
-            <Event key={userEvent._id}  userEvent={userEvent}/>
-          </span>
-        ))}
-        
-        <span className="sliderButtonPerv">
+              <span className="sliderButtonPerv">
             <div onClick={prevSlide}> <KeyboardArrowLeftIcon fontSize='large' className="arrowBT"/> </div>
         </span>
+
+        {eventSlide.map((event , index) => (
+          <div>
+            <img src={event?.img} alt={event?.name} className='imgEvent' onClick={()=>navigate(`/events/${event._id}`)}/>
+
+          </div>
+           
+
+        ))}
+        
+
         <span className="sliderButtonNext">
             <div onClick={nextSlide}> <KeyboardArrowRightIcon fontSize="large" className="arrowBT"/></div>
         </span>

@@ -7,6 +7,7 @@ import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import ButtonBack from "../../components/ButtonBack/ButtonBack";
 import { createTicket } from "../../ServerAPI/TicketAPI";
 import SelectTickets from "../../components/selectTickets/SelectTickets";
+import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 
 export default function EventDetails() {
@@ -38,7 +39,7 @@ export default function EventDetails() {
           <img src={eventData.img} alt={eventData.name} />
           <div>
             <h4>:תאריך</h4>
-            <p> צריך להוסיף </p>
+            <p> {eventDateFormatIL(eventData.eventDate)}</p>
             <h4>:מיקום</h4>
             <p>{eventData.location}</p>
           </div>
@@ -50,6 +51,10 @@ export default function EventDetails() {
         <h2>:פירוט </h2>
         <p className="description-Event">{eventData.description}</p>
         <hr />
+        <div className="priceSection">
+          <h4>:סוג כרטיס</h4>
+          <SelectTickets tickets={eventData.price} updatePriceTicket={updatePriceTicket}/>
+        </div>
         <Button
           onClick={buyTicket}
           variant="contained"
@@ -59,10 +64,7 @@ export default function EventDetails() {
         </Button>
         <h4> {priceTicket} : מחיר כרטיס</h4>
 
-        <div className="priceSection">
-          <h4>:סוג כרטיס</h4>
-          <SelectTickets tickets={eventData.price} updatePriceTicket={updatePriceTicket}/>
-        </div>
+
       </div>
     </div>
   );
