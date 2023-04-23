@@ -8,7 +8,7 @@ import { MdCloudUpload } from 'react-icons/md'
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Textarea } from '@mui/joy';
-import Input from '@mui/joy/Input';
+
 
 export default function CreateEvent() {
   const [name, setName] = useState("")
