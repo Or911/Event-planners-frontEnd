@@ -1,10 +1,5 @@
-img{
-    width: 95%;
-    height: 95%;
-    border-radius: 5px;
-}
 
-.eventCard {
+/* .eventCard {
     display: grid;
     grid-template-columns: 50px 50px 50px 50px;
     grid-template-rows: auto;
@@ -13,5 +8,43 @@ img{
       "main main . sidebar"
       "footer footer footer footer";
     background-color: darkgray;
+} */
+.eventCard-container{
+  overflow: hidden;
+  width: 80%;
+  height: 200px;
+  position: relative;
+}
+.eventCard-container .imgEvent{
+  width: 100%;
+  height: 250px;
+  border-radius: 5px;
+}
+.eventSlider .imgEvent{
+  width: 100%;
+  transition: 0.5s;
+  height: 200px;
+}
+.evenDetails{
+  position: absolute;
+  bottom: -30%;
+  transition: 1s;
+  background-color: rgba(10, 12, 14, 0.624);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 5px;
+  border-radius: 5px;
 }
 
+.eventCard-container .imgEvent:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.evenDetails:hover{
+  bottom: 0%;
+  transition: 1s;
+}
+.eventCard-container a{
+  color: white;
+}

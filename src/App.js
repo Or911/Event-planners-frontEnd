@@ -7,6 +7,7 @@ import AccountConnection from "./pages/AccountConnection/AccountConnection";
 import CreateEvent from "./pages/CreateEvent/CreateEvent";
 import { useState } from 'react';
 import EventDetails from "./pages/EventDetails/EventDetails";
+import Tickets from "./pages/Tickets/Tickets";
 
 function App() {
   const [isLogin , updateIsLogin] = useState(false)
@@ -18,12 +19,13 @@ function App() {
 
   return (
     <Router>
-      <img src={background} className="background"/>
+      <img src={background} className="background" alt=""/>
       <NavBar isLogin={isLogin} updateLoggedIn={updateLoggedIn} />
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<AccountConnection updateLoggedIn={updateLoggedIn}/>}/>
         <Route path="/createEvent" element={<CreateEvent/>}/>
+        <Route path="/tickets" element={<Tickets/>}/>
         <Route path="/AboutUs" />
         <Route path="/events/:id" element={<EventDetails/>} />
       </Routes>

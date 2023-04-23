@@ -19,7 +19,7 @@ export default function Menu() {
   });
 
   const pages = ['Home', 'Create event', 'Tickets', 'About Us']
-  const links = ['/', '/createEvent', '/' , '/AboutUs']
+  const links = ['/', '/createEvent', '/tickets' , '/AboutUs']
   const icons = [<HomeIcon/> , <AddBoxIcon/> , <LocalActivityIcon/>, <Diversity3Icon/>]
 
   const toggleDrawer = (anchor, open) => (event) => {

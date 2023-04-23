@@ -1,23 +1,23 @@
 import React from 'react'
 import './Event.css'
 import { useNavigate} from 'react-router-dom';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export default function Event({userEvent}) {
+    // let link = `https://waze.com/ul?q=${userEvent?.location}&navigate=yes`
+  let link = `http://maps.google.com/maps?daddr=${userEvent?.location}&dir_action=navigate`
   const navigate = useNavigate();
   return (
-    <div className='event'>
-        <div className='eventCard-container'onClick={()=>navigate(`/events/${userEvent._id}`)}>
+        <div className='eventCard-container' >
+            <img src={userEvent?.img} alt={userEvent?.name} className='imgEvent' onClick={()=>navigate(`/events/${userEvent._id}`)}/>
+            <div> {userEvent?.name}  {userEvent?.organizer}</div>
 
-          <span>
-            <img src={userEvent?.img} alt=''/>
-            <div> {userEvent?.name} by {userEvent?.organizer}</div>
-          </span>
+            <div className='evenDetails' > 
+            <KeyboardArrowUpIcon/>
+            <p>{userEvent?.name} </p>
+            <a href={link}>{userEvent?.location}<LocationOnIcon /></a></div>
 
-          <span>
-            <div> {userEvent?.date}  {userEvent?.location}</div>
-          </span>
         </div>
-
-    </div>
   )
 }

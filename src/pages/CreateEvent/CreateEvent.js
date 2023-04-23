@@ -95,9 +95,6 @@ export default function CreateEvent() {
           <br></br>
           <hr />
 
-          <TextField id="outlined-basic" label="Organizer" variant="outlined" onChange={event => setOrganizer(event.target.value)} value={organizer} />
-          <br></br>
-          <br></br>
           <TextField id="outlined-basic" label="Entertainer" variant="outlined" onChange={event => setEntertainer(event.target.value)} value={entertainer} />
           <br></br>
           <br></br>
