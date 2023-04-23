@@ -33,3 +33,11 @@
     }
 
   }
+  @media only screen and (max-width: 1200px) {
+    .eventsCategory{
+        grid-template-columns:  auto auto auto;
+        row-gap: 20px;
+        width: 95%;
+    }
+
+  }
