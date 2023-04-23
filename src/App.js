@@ -8,6 +8,8 @@ import CreateEvent from "./pages/CreateEvent/CreateEvent";
 import { useEffect, useState } from 'react';
 import EventDetails from "./pages/EventDetails/EventDetails";
 import Tickets from "./pages/Tickets/Tickets";
+import ProfileData from "./pages/ProfileData/ProfileData";
+
 
 function App() {
   const [isLogin , updateIsLogin] = useState(false)
@@ -34,6 +36,7 @@ function App() {
         <Route path="/tickets" element={<Tickets/>}/>
         <Route path="/AboutUs" />
         <Route path="/events/:id" element={<EventDetails/>} />
+        <Route path="/profile" element={<ProfileData/>} />
       </Routes>
     </Router>
   )

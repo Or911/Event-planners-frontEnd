@@ -18,7 +18,6 @@ export default function EventDetails() {
   useEffect(() => {
     getEventData(id).then((event) => {
       setEventData(event.data);
-      console.log(event.data);
     });
     // console.log("EventDetails");
   }, []);
