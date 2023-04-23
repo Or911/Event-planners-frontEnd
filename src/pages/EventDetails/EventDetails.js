@@ -17,6 +17,7 @@ export default function EventDetails() {
   useEffect(() => {
     getEventData(id).then((event) => {
       setEventData(event.data);
+      console.log(event.data);
     });
     console.log("EventDetails");
   }, []);
@@ -29,7 +30,6 @@ export default function EventDetails() {
     createTicket(eventData._id, priceTicket);
   };
 
-  const arr =[{standard: '40'}, {vip:'500'}]
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
@@ -38,7 +38,7 @@ export default function EventDetails() {
           <img src={eventData.img} alt={eventData.name} />
           <div>
             <h4>:תאריך</h4>
-            <p> צריך להוסיף </p>
+            <p> {eventData.eventDate}</p>
             <h4>:מיקום</h4>
             <p>{eventData.location}</p>
           </div>
@@ -50,6 +50,10 @@ export default function EventDetails() {
         <h2>:פירוט </h2>
         <p className="description-Event">{eventData.description}</p>
         <hr />
+        <div className="priceSection">
+          <h4>:סוג כרטיס</h4>
+          <SelectTickets tickets={eventData.price} updatePriceTicket={updatePriceTicket}/>
+        </div>
         <Button
           onClick={buyTicket}
           variant="contained"
@@ -59,10 +63,7 @@ export default function EventDetails() {
         </Button>
         <h4> {priceTicket} : מחיר כרטיס</h4>
 
-        <div className="priceSection">
-          <h4>:סוג כרטיס</h4>
-          <SelectTickets tickets={eventData.price} updatePriceTicket={updatePriceTicket}/>
-        </div>
+
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import './EventSlider.css'
 
 export default function EventSlider({ events }) {
-  const LIMIT = 3
+  const LIMIT = 1
   const [eventSlide, setEventSlide] = useState([]);
   const [slideIndex, setSlideIndex] = useState(LIMIT);
 
@@ -32,10 +32,9 @@ export default function EventSlider({ events }) {
   return (
     <div className="eventSlider">
 
-        {eventSlide.map((userEvent , index) => (
-          <span key={index} className={`sliderEvent${index}`}>
-            <Event key={userEvent._id}  userEvent={userEvent}/>
-          </span>
+        {eventSlide.map((event , index) => (
+            <Event key={event._id}  userEvent={event}/>
+
         ))}
         
         <span className="sliderButtonPerv">

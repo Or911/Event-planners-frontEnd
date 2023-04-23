@@ -1,9 +1,9 @@
 .eventSlider {
   display: grid;
-  /* grid-template-columns:  auto ; */
-  grid-template-areas: "sliderButtonPerv sliderEvent1 sliderEvent2 sliderEvent3 sliderButtonNext";
-  /* width: 90%;
-  height: 200px; */
+  grid-template-columns:  auto ;
+  grid-template-areas: "sliderButtonPerv sliderEvent1 sliderButtonNext";
+  width: 90%;
+  height: 200px; 
 }
 
 
@@ -15,12 +15,7 @@
 .sliderEvent1{
     grid-area: sliderEvent1;
 }
-.sliderEvent2{
-    grid-area: sliderEvent2;
-}
-.sliderEvent3{
-    grid-area: sliderEvent3;
-}
+
 
 .sliderButtonNext{
     grid-area: sliderButtonNext;
@@ -46,3 +41,9 @@
     }
 
   } */
+
+  .eventCard-container .imgEvent{
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+  }

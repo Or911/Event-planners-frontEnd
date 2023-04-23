@@ -20,11 +20,11 @@
   height: 250px;
   border-radius: 5px;
 }
-.eventSlider .imgEvent{
+/* .eventSlider .imgEvent{
   width: 100%;
   transition: 0.5s;
   height: 200px;
-}
+} */
 .evenDetails{
   position: absolute;
   bottom: -30%;
