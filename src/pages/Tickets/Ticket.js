@@ -12,9 +12,9 @@ export default function Ticket({ ticket }) {
       <div className="ticket-content">
         <div className="ticket-text">
           <h1 onClick={()=>navigate(`/events/${ticket.event._id}`)}> {ticket.event.name} </h1>
-          <div> Date : {ticket.event.eventDate} </div>
-          <div> Location: {ticket.event.location} </div>
-          <div> Price: {ticket.price}$ </div>
+          <div> {new Date(ticket.event.eventDate).toDateString()} </div>
+          <div> מיקום: {ticket.event.location} </div>
+          <div> מחיר: {ticket.price}$ </div>
         </div>
       </div>
     </div>
