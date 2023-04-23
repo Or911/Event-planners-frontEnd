@@ -1,40 +1,59 @@
-.eventCreate {
-    position:absolute;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    align-content: center;
-    font-family: 'Courier New', monospace;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: rgb(67, 126, 133);
-}
-::placeholder {
-    color: black;
-    opacity: 1; /* Firefox */
-  }
-.eventDiv {
-    display: grid;
-    margin-top: 30px;
-    width: 27vh;
-    height: 5vh;
-    align-content: center;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-left: 5vh;
-    font-family: 'Courier New', monospace;
-    font-size:34px;
-}
-
-.buttonSubmitCreate {
+.event-details .cardEvent{
+    background-color: rgba(193, 199, 203, 0.592);
+    margin-top: 90px;
+    width: 90%;
+    margin-left: 5%;
     border-radius: 5px;
-    text-align: center;
-    width: 27vh;
-    height: 5vh;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    border: none;
-    margin: 1.6rem;
-    padding: 1rem;
-    color: white;
-    background-color:var(--purple);
+    padding: 10px;
+    position: relative;
 }
+.event-details img{
+    max-height: 300px;
+}
+.imgUplodform{
+    width: 600px;
+    height: 200px;
+    display: flex;
+    border: 4px dashed #fff;
+    justify-content: center;
+    align-items: center;
+  }
+.event-details .imgSection{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+.imgSection div h4{
+    margin-top: 15px;
+}
+.cardEvent{
+    position: relative;
+}
+.cardEvent hr{
+    width:60%;
+    text-align:left;
+    margin-left:0;
+    margin-bottom: 10px;
+}
+.cardEvent .priceSection{
+    position: absolute;
+    left: 732px;
+}
+@media only screen and (min-width: 1350px) {
+    .event-details .cardEvent{
+        width: 70%;
+        margin-top: 0;
+        margin-left: 15%;
+    }
+    .event-details img{
+        max-height: 500px;
+    }
+  }
+  .description-Event{
+    line-break: anywhere;
+    max-width: 200px;
+  }
+
+ Button{
+    color:var(--purple);
+  }
