@@ -1,7 +1,9 @@
 .eventSlider {
   display: grid;
-  grid-template-columns: 50px auto auto auto 50px;
+  /* grid-template-columns:  auto ; */
   grid-template-areas: "sliderButtonPerv sliderEvent1 sliderEvent2 sliderEvent3 sliderButtonNext";
+  /* width: 90%;
+  height: 200px; */
 }
 
 

@@ -25,7 +25,7 @@ export default function Home() {
 
             {eventsCategory.map(({_id , events}) => (
               <>
-                <h1> Category : {_id} </h1>
+                <h1> {_id} </h1>
                 <div className="eventsCategory" key={_id}>
                     
                     {events.map((e) => (<Event key={e._id} userEvent={e}/>) )

@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import AccountConnection from "./pages/AccountConnection/AccountConnection";
 import CreateEvent from "./pages/CreateEvent/CreateEvent";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import EventDetails from "./pages/EventDetails/EventDetails";
 import Tickets from "./pages/Tickets/Tickets";
 
@@ -16,6 +16,12 @@ function App() {
     if(isLog){updateIsLogin(true)}
     else{updateIsLogin(false)}
   }
+  useEffect(()=>{
+    if(localStorage.getItem("token")){
+      updateIsLogin(true)
+    }
+    
+  },[])
 
   return (
     <Router>

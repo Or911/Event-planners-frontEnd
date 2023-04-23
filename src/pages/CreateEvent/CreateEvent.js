@@ -3,12 +3,11 @@ import './CreateEvent.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { uploadImg } from '../../utilities/uploadImg';
-import ButtonBack from '../../components/NavBar/ButtonBack/ButtonBack';
+import ButtonBack from '../../components/ButtonBack/ButtonBack'
 import { MdCloudUpload } from 'react-icons/md'
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Textarea } from '@mui/joy';
-import Input from '@mui/joy/Input';
 
 export default function CreateEvent() {
   const [name, setName] = useState("")

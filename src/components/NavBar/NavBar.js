@@ -2,6 +2,7 @@ import './NavBar.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SideMenu from './SideMenu'
 import { useNavigate} from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function NavBar({isLogin , updateLoggedIn}){
     const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function NavBar({isLogin , updateLoggedIn}){
         }
         navigate('/login')
     }
+
 
     return(
         <div className='navBar'>
