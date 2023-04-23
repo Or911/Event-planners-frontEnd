@@ -33,7 +33,6 @@ export default function EventSlider({ events }) {
     <div className="eventSlider">
 
         {eventSlide.map((event , index) => (
-          <div></div>
             <Event key={event._id}  userEvent={event}/>
 
         ))}
