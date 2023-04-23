@@ -17,8 +17,9 @@ export default function EventDetails() {
   useEffect(() => {
     getEventData(id).then((event) => {
       setEventData(event.data);
+      console.log(event.data);
     });
-    console.log("EventDetails");
+    // console.log("EventDetails");
   }, []);
 
   function updatePriceTicket(price){
@@ -28,8 +29,7 @@ export default function EventDetails() {
   const buyTicket = function () {
     createTicket(eventData._id, priceTicket);
   };
-
-  const arr =[{standard: '40'}, {vip:'500'}]
+  
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
