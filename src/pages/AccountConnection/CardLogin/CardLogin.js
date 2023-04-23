@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import './CardLogin.css'
 import { useNavigate} from 'react-router-dom';
-import ButtonBack from '../../../components/NavBar/ButtonBack/ButtonBack';
+import ButtonBack from '../../../components/ButtonBack/ButtonBack';
 
 export default function CardLogin({sendRequest}){
     const navigate = useNavigate();

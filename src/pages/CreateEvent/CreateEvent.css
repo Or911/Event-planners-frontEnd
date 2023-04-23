@@ -39,7 +39,7 @@
     position: absolute;
     left: 732px;
 }
-@media only screen and (min-width: 1350px) {
+/* @media only screen and (min-width: 1350px) {
     .event-details .cardEvent{
         width: 70%;
         margin-top: 0;
@@ -52,7 +52,7 @@
   .description-Event{
     line-break: anywhere;
     max-width: 200px;
-  }
+  } */
 
  Button{
     color:var(--purple);
