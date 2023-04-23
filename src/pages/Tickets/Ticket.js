@@ -1,20 +1,23 @@
 import React from "react";
 import "./Ticket.css";
 import { useNavigate} from 'react-router-dom';
+import ButtonBack from "../../components/ButtonBack/ButtonBack";
+import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 export default function Ticket({ ticket }) {
 
   const navigate = useNavigate();
-
+  
   return (
     <div className="ticket">
       <img className="ticket-img" src={ticket.event.img} alt="Missing"></img>
       <div className="ticket-content">
         <div className="ticket-text">
+          <div className="ticket-back"><ButtonBack/></div>
           <h1 onClick={()=>navigate(`/events/${ticket.event._id}`)}> {ticket.event.name} </h1>
-          <div> Date : {ticket.event.eventDate} </div>
-          <div> Location: {ticket.event.location} </div>
-          <div> Price: {ticket.price}$ </div>
+          <div> {eventDateFormatIL(ticket.event.eventDate)} </div>
+          <div> מיקום: {ticket.event.location} </div>
+          <div> מחיר: {ticket.price}$ </div>
         </div>
       </div>
     </div>

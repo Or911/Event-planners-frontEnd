@@ -16,6 +16,10 @@
    .ticket-text div{
       width: 70%;
     }
+
+    .ticket-back{
+      left: 20%;
+    }
  }
 .ticket:before,
 .ticket:after {

@@ -7,6 +7,7 @@ import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import ButtonBack from "../../components/ButtonBack/ButtonBack";
 import { createTicket } from "../../ServerAPI/TicketAPI";
 import SelectTickets from "../../components/selectTickets/SelectTickets";
+import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 
 export default function EventDetails() {
@@ -19,7 +20,7 @@ export default function EventDetails() {
       setEventData(event.data);
       console.log(event.data);
     });
-    console.log("EventDetails");
+    // console.log("EventDetails");
   }, []);
 
   function updatePriceTicket(price){
@@ -29,7 +30,7 @@ export default function EventDetails() {
   const buyTicket = function () {
     createTicket(eventData._id, priceTicket);
   };
-
+  
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
@@ -38,7 +39,7 @@ export default function EventDetails() {
           <img src={eventData.img} alt={eventData.name} />
           <div>
             <h4>:תאריך</h4>
-            <p> {eventData.eventDate}</p>
+            <p> {eventDateFormatIL(eventData.eventDate)}</p>
             <h4>:מיקום</h4>
             <p>{eventData.location}</p>
           </div>
