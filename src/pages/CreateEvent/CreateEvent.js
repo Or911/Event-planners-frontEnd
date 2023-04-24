@@ -96,24 +96,24 @@ export default function CreateEvent({updateNotificationData}) {
             <div>
               <h4> <TextField type="date" className='date' onChange={event => setEventDate(event.target.value)} value={eventDate} /></h4>
 
-              <h4><TextField id="outlined-basic" className='location' label="Location" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
+              <h4><TextField id="outlined-basic" className='מיקום' label="Location" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
             </div>
 
           </div>
           <br></br>
-          <TextField id="outlined-basic" label="name" onChange={event => setName(event.target.value)} value={name} />
+          <TextField id="outlined-basic" label="שם" onChange={event => setName(event.target.value)} value={name} />
           <br></br>
           <br></br>
           <hr />
 
-          <TextField id="outlined-basic" label="Entertainer" variant="outlined" onChange={event => setEntertainer(event.target.value)} value={entertainer} />
+          <TextField id="outlined-basic" label="בדרן" variant="outlined" onChange={event => setEntertainer(event.target.value)} value={entertainer} />
           <br></br>
           <br></br>
-          <TextField id="outlined-basic" label="Category" onChange={event => setCategory(event.target.value)} value={category} />
+          <TextField id="outlined-basic" label="קטגוריה" onChange={event => setCategory(event.target.value)} value={category} />
           <br></br>
           <br></br>
           <TextField
-            label="Description"
+            label="תיאור"
             multiline
             minRows={2}
             maxRows={3}
@@ -125,7 +125,7 @@ export default function CreateEvent({updateNotificationData}) {
           <Button variant="outlined" className='buttonSubmitCreate' onClick={addEvent}>Create</Button>
           <div className="price">
             <TextField
-              label="Price"
+              label="מחיר"
               type="number"
               id="outlined-basic"
               defaultValue={price}
