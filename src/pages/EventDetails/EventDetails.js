@@ -34,7 +34,7 @@ export default function EventDetails({updateNotificationData}) {
     }
     else{
       createTicket(eventData._id, priceTicket).then(()=>{
-        updateNotificationData(`קנית כרטיס (${priceTicket})  ל${eventData.name}`, 'success')
+        updateNotificationData(`קנית כרטיס (${priceTicket}$)  ל${eventData.name}`, 'success')
         navigate("/tickets")
       }).catch((error) => {
         updateNotificationData(` הכרטיסים אזלו או שכרטיס האשראי נכשל`, 'error')
