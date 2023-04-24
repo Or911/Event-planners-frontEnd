@@ -7,16 +7,13 @@ import ButtonBack from '../../components/NavBar/ButtonBack/ButtonBack';
 import { MdCloudUpload } from 'react-icons/md'
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
-import { Textarea } from '@mui/joy';
-import Input from '@mui/joy/Input';
 
 export default function CreateEvent() {
   const [name, setName] = useState("")
-  const [organizer, setOrganizer] = useState("")
   const [entertainer, setEntertainer] = useState("")
   const [category, setCategory] = useState("")
   const [description, setDescription] = useState("")
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState()
   const [like, setLike] = useState([])
   const [location, setLocation] = useState("")
   const [eventDate, setEventDate] = useState(new Date())
@@ -25,13 +22,14 @@ export default function CreateEvent() {
   const [fileName, setFileName] = useState("null")
 
   const addEvent = async () => {
-    let imgUrl = await uploadImg(document.getElementById('imgInput').files[0])
+    let imgUrl = await uploadImg(document.getElementById('image').files[0])
+    console.log(imgUrl);
+
     axios({
       method: 'post',
       url: 'http://localhost:4000/event',
       data: {
         name: name,
-        organizer: organizer,
         entertainer: entertainer,
         category: category,
         description: description,
@@ -40,7 +38,7 @@ export default function CreateEvent() {
         location: location,
         eventDate: eventDate,
         dateCreated: dateCreated,
-        img: imgUrl,
+        // img: imgUrl,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -48,7 +46,6 @@ export default function CreateEvent() {
     }).then(data => console.log(data))
 
     setName('');
-    setOrganizer('');
     setEntertainer('');
     setCategory('');
     setDescription('');
@@ -61,10 +58,10 @@ export default function CreateEvent() {
   }
 
   return (
-   
-    <div className='page event-details'>
+
+    <div className='page event-create'>
       <form >
-        <div className='cardEvent'>
+        <div className='createEvent'>
           <ButtonBack />
           <div className='imgSection'>
             <div className="imgUplodform" onClick={() => document.querySelector(".input-field").click()}>
@@ -72,25 +69,33 @@ export default function CreateEvent() {
                 onChange={({ target: { files } }) => {
                   files[0] && setFileName(files[0].name)
                   if (files) {
-                    setImage(URL.createObjectURL(files[0]))
+                    if (files['length'] === 0) {
+                      setImage(null)
+                      setFileName("No selected File")
+                    } else {
+                      setImage(URL.createObjectURL(files[0]))
+                    }
+                  }
+                  else {
+
                   }
                 }}
               />
               {image ?
-                <img src={image} width={100} height={100} alt={fileName} />
+                <img src={image} alt={fileName} />
                 :
                 <MdCloudUpload color='#1475cd' size={60} />
               }
             </div>
             <div>
-              <h4> <TextField type="date" onChange={event => setEventDate(event.target.value)} value={eventDate} /></h4>
+              <h4> <TextField type="date" className='date' onChange={event => setEventDate(event.target.value)} value={eventDate} /></h4>
 
-              <h4><TextField  id="outlined-basic" label="Location" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
+              <h4><TextField id="outlined-basic" className='location' label="Location" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
             </div>
 
           </div>
           <br></br>
-          <TextField  id="outlined-basic"  label="name"   onChange={event => setName(event.target.value)} value={name} />
+          <TextField id="outlined-basic" label="name" onChange={event => setName(event.target.value)} value={name} />
           <br></br>
           <br></br>
           <hr />
@@ -98,27 +103,26 @@ export default function CreateEvent() {
           <TextField id="outlined-basic" label="Entertainer" variant="outlined" onChange={event => setEntertainer(event.target.value)} value={entertainer} />
           <br></br>
           <br></br>
-          <TextField id="outlined-basic" label="Category"  onChange={event => setCategory(event.target.value)} value={category} />
+          <TextField id="outlined-basic" label="Category" onChange={event => setCategory(event.target.value)} value={category} />
           <br></br>
           <br></br>
-          <Textarea 
-          placeholder="Description"
-          sx={{ mb: 1 }}
-            variant="solid"
+          <TextField
+            label="Description"
+            multiline
+            minRows={2}
+            maxRows={3}
             onChange={event => setDescription(event.target.value)}
             value={description} />
-             <br></br>
-        
+          <br></br>
+          <br></br>
           <hr />
-
           <Button variant="outlined" className='buttonSubmitCreate' onClick={addEvent}>Create</Button>
-          <div className="priceSection">
+          <div className="price">
             <TextField
-              label="Price" 
-              placeholder='price'
+              label="Price"
               type="number"
               id="outlined-basic"
-              
+              defaultValue={price}
               onChange={event => setPrice(event.target.value)}
               value={price}
             />
