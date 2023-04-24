@@ -16,10 +16,6 @@
    .ticket-text div{
       width: 70%;
     }
-
-    .ticket-back{
-      left: 20%;
-    }
  }
 .ticket:before,
 .ticket:after {
@@ -27,7 +23,7 @@
   position: absolute;
   left: 5px;
   height: 6px;
-  width: 290px;
+  width: 480px;
 }
 .ticket:before {
   top: -5px;
