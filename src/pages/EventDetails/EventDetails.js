@@ -10,7 +10,7 @@ import SelectTickets from "../../components/selectTickets/SelectTickets";
 import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 
-export default function EventDetails() {
+export default function EventDetails({updateNotificationData}) {
   const [eventData, setEventData] = useState({});
   const [ priceTicket , setPriceTicket] = useState("")
   let { id } = useParams();
@@ -28,13 +28,22 @@ export default function EventDetails() {
   }
 
   const buyTicket = function () {
-    createTicket(eventData._id, priceTicket);
+    if(priceTicket === ""){
+      console.log('אנא בחר סוג כרטיס')
+      updateNotificationData('אנא בחר סוג כרטיס', 'error')
+    }
+    else{
+      createTicket(eventData._id, priceTicket).then(()=>{
+        updateNotificationData(`קנית כרטיס (${priceTicket})  ל${eventData.name}`, 'success')
+      }).catch((error) => {
+        updateNotificationData(` הכרטיסים אזלו או שכרטיס האשראי נכשל`, 'error')
+      })
+    }
   };
   
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
-        <ButtonBack />
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
           <div>

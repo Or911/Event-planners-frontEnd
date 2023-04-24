@@ -8,14 +8,21 @@ import CreateEvent from "./pages/CreateEvent/CreateEvent";
 import { useEffect, useState } from 'react';
 import EventDetails from "./pages/EventDetails/EventDetails";
 import Tickets from "./pages/Tickets/Tickets";
+import SnackbarAlerts from "./components/SnackBar/SnackbarAlerts";
 
 function App() {
   const [isLogin , updateIsLogin] = useState(false)
+  const [notificationData , setNotificationData] = useState({message : "" , severity: ""})
 
   function updateLoggedIn(isLog){
     if(isLog){updateIsLogin(true)}
     else{updateIsLogin(false)}
   }
+
+  function updateNotificationData(message , severity){
+    setNotificationData({message : message , severity : severity})
+  }
+
   useEffect(()=>{
     if(localStorage.getItem("token")){
       updateIsLogin(true)
@@ -29,12 +36,13 @@ function App() {
       <NavBar isLogin={isLogin} updateLoggedIn={updateLoggedIn} />
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<AccountConnection updateLoggedIn={updateLoggedIn}/>}/>
-        <Route path="/createEvent" element={<CreateEvent/>}/>
+        <Route path="/login" element={<AccountConnection updateLoggedIn={updateLoggedIn} updateNotificationData={updateNotificationData}/>}/>
+        <Route path="/createEvent" element={<CreateEvent updateNotificationData={updateNotificationData}/>}/>
         <Route path="/tickets" element={<Tickets/>}/>
         <Route path="/AboutUs" />
-        <Route path="/events/:id" element={<EventDetails/>} />
+        <Route path="/events/:id" element={<EventDetails updateNotificationData={updateNotificationData}/>} />
       </Routes>
+      <SnackbarAlerts notificationData={notificationData}/>
     </Router>
   )
 }

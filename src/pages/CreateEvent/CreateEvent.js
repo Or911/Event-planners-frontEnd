@@ -9,7 +9,7 @@ import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Textarea } from '@mui/joy';
 
-export default function CreateEvent() {
+export default function CreateEvent({updateNotificationData}) {
   const [name, setName] = useState("")
   const [organizer, setOrganizer] = useState("")
   const [entertainer, setEntertainer] = useState("")
@@ -44,7 +44,14 @@ export default function CreateEvent() {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       }
-    }).then(data => console.log(data))
+    }).then(data => {
+      updateNotificationData('יצירת האירוע עברה בהצלחה', 'success')
+      console.log(data)
+    })
+    .catch(err => {
+      updateNotificationData('יצירת האירוע נכשלה', 'error')
+      console.error(err)
+    })
 
     setName('');
     setOrganizer('');
