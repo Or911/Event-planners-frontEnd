@@ -1,5 +1,5 @@
 .cardProfile{
-    background-color:var(--fade);
+    background-color:white;
     width: 90%;
     margin-left: 5%;
     border-radius: 5px;
@@ -8,20 +8,36 @@
     position: relative;
 }
 .cardProfile .userSection{
-    background-color: rgba(20, 20, 21, 0.821);
+    background-color: rgba(5, 5, 5, 0.889);
     margin-bottom: 10px;
+    color: white;
     padding: 5px;
     border-radius: 5px;
 }
+.cardProfile .box-divs{
+    display: grid;
+    grid-template-columns: 6fr 10fr;
+    height: 75vh;
+}
+.box-divs .userDetails{
+    background-color: aqua;
+}
+
+
+
 .cardProfile .userSection h4{
     display:inline;
     padding: 5px;
     
 }
-.cardProfile .listsEvents{
+.listsEvents{
     
     display: grid;
     grid-template-columns: auto;
-    width: 60%;
+    width: 95%;
     gap: 30px;
+    overflow: auto;
+    height: 300px;
+    border-style: solid , ;
+    
 }
