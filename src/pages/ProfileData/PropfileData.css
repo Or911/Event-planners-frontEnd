@@ -21,7 +21,7 @@
 .cardProfile .listsEvents{
     
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     width: 60%;
     gap: 30px;
 }

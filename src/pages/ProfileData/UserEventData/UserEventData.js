@@ -1,14 +1,19 @@
 import React from 'react'
 import './userEventData.css'
+import SettingsIcon from '@mui/icons-material/Settings';
 
 
 
 export default function UserEventData({eventData}) {
     console.log(eventData)
   return (
-    <div className='cardEventDetails'>
+    <div className='cardEventsUser'>
         <img src={eventData.img} alt={eventData.name}/>
-        <h4>{eventData.name}</h4>
+        <div>
+        <SettingsIcon className='buttonSettings'/>
+        <h4>שם: {eventData.name}</h4>
+        <h4>תאריך: {eventData.eventDate}</h4>
+        </div>
     </div>
   )
 }
