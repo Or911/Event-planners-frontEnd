@@ -96,7 +96,7 @@ export default function CreateEvent({updateNotificationData}) {
             <div>
               <h4> <TextField type="date" className='date' onChange={event => setEventDate(event.target.value)} value={eventDate} /></h4>
 
-              <h4><TextField id="outlined-basic" className='מיקום' label="Location" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
+              <h4><TextField id="outlined-basic" className='location' label="מיקום" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
             </div>
 
           </div>
