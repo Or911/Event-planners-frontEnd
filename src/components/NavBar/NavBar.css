@@ -1,5 +1,5 @@
 .navBar{
-    background-color:var(--fade);
+    background-color:black;
     position: fixed;
     width: 100%;
     display: grid;
@@ -7,6 +7,7 @@
     gap: 10px;
     padding: 5px;
     z-index: 1;
+    box-shadow: -1px 1px 12px 2px #000;
 
 }
 .navBar div{
@@ -14,7 +15,7 @@
     height: 45px;
 }
 .iconsBar{
-    color:var(--purple);
+    color:white;
     position: relative;
 }
 .iconsBar :first-child:hover{
@@ -26,20 +27,22 @@
     height: 40px;
 }
 .headerName{
-    color:var(--purple);
+    color:white;
     margin: 0;
     text-align: center;
 }
 .loginBt{
-    background-color:var(--purple);
+    background-color:#FEDA00;
     border-radius: 5px;
-    color: var(--white);
+    color: black;
     margin: 0;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
     padding: 0;
 }
 .linkSideM{
-    color: var(--purple);
+    color: black;
+    background-color: #FEDA00;
     display: grid;
     text-decoration: none;
 }
@@ -47,9 +50,9 @@
     margin-left: 20px;
 }
 .iconsBar h3{
-    color: var(--purple);
+    color: white;
      position: absolute;
-     right: -20px;
+     right: -50px;
     top: 5px; 
 }
 
