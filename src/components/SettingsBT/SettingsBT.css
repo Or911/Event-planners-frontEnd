@@ -1,0 +1,13 @@
+
+.buttonSettings{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+}
+.locked{
+    background-color: rgba(207, 209, 209, 0.614);
+    position: absolute;
+    height: 110px;
+    width: 80%;
+}

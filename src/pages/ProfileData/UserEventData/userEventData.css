@@ -5,14 +5,18 @@
     margin-left: 10px;
     display: grid;
     grid-template-columns: 2fr 15fr;
+    position: relative;
 }
 .cardEventsUser img{
     width: 150px;
     height: 150px;
     border-radius: 5px;
 }
-.cardEventsUser .buttonSettings{
-    position: relative;
-    left: 350px;
-    bottom: 190px;
+.cardEventsUser .buttomBar{
+    position: absolute;
+    bottom: 0px;
+    left: 200px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px;
 }
