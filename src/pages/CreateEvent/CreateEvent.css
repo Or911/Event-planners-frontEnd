@@ -1,59 +1,88 @@
-.event-details .cardEvent{
+.event-create .createEvent {
     background-color: rgba(193, 199, 203, 0.592);
-    margin-top: 90px;
+    margin-top: 30px;
     width: 90%;
     margin-left: 5%;
     border-radius: 5px;
     padding: 10px;
     position: relative;
 }
-.event-details img{
+
+.event-create img {
     max-height: 300px;
 }
-.imgUplodform{
-    width: 600px;
+
+.event-create .imgUplodform {
+    width: auto;
     height: 200px;
-    display: flex;
+    display:flex;
     border: 4px dashed #fff;
     justify-content: center;
     align-items: center;
-  }
-.event-details .imgSection{
+    position: relative;
+}
+
+
+.event-create .imgSection {
     display: grid;
     grid-template-columns: auto auto;
 
 }
-.imgSection div h4{
+
+.imgSection div h4 {
     margin-top: 15px;
 }
-.cardEvent{
+
+.createEvent {
     position: relative;
 }
-.cardEvent hr{
-    width:60%;
-    text-align:left;
-    margin-left:0;
+
+.createEvent hr {
+    width: 60%;
+    text-align: left;
+    margin-left: 0;
     margin-bottom: 10px;
 }
-.cardEvent .priceSection{
+
+.createEvent .price {
     position: absolute;
-    left: 732px;
+
+    right: 250px;
+    bottom: 90px;
 }
-/* @media only screen and (min-width: 1350px) {
-    .event-details .cardEvent{
+
+ .date{
+    left: 250px;
+    position: absolute;
+}
+ .location{
+    left: 250px;
+    position: absolute;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .event-create .createEvent {
         width: 70%;
         margin-top: 0;
         margin-left: 15%;
     }
-    .event-details img{
+
+    .event-create img {
         max-height: 500px;
     }
-  }
-  .description-Event{
+}
+
+.description-Event {
     line-break: anywhere;
     max-width: 200px;
-  } */
-
- Button{
-    color:var(--purple);
   }
+
+Button {
+    color: var(--purple);
+}
+
+img {
+    width: 580px;
+    height: 180px;
+}
