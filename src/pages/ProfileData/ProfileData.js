@@ -5,6 +5,7 @@ import { getuserData } from "../../ServerAPI/UserDataAPI";
 import UserEventData from "./UserEventData/UserEventData";
 import userImage from "./img/profile.png";
 import graf from "./img/graf.png";
+import ButtonBack from "../../components/ButtonBack/ButtonBack";
 
 export default function ProfileData() {
   const [userEvents, setUserEvents] = useState([]);
@@ -18,7 +19,8 @@ export default function ProfileData() {
     <div className="page profilePage">
       <div className="cardProfile">
         <div className="userSection">
-          <ManageAccountsIcon fontSize="large" />
+      <ButtonBack/>
+          <ManageAccountsIcon fontSize="large" className="icon"/>
           <h4>אזור אישי</h4>
         </div>
         <div className="box-divs">

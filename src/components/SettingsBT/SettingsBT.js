@@ -18,10 +18,9 @@ export default function SettingsBT() {
     }
 
   return (
-    <div>
-     <p onClick={switchEditing}><SettingsIcon fontSize='large' className='buttonSettings' /></p>
+    <div >
         <div className={edit?"open":"locked"}>
-        {edit?null:<LockIcon/>}
+        {edit?<LockOpenIcon onClick={switchEditing} className='buttonHoverLow'/>:<LockIcon onClick={switchEditing} className='buttonHoverLow'/>}
         </div>
 
     </div>

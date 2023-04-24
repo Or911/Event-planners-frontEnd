@@ -12,6 +12,10 @@
     color: white;
     padding: 5px;
     border-radius: 5px;
+    
+}
+.userSection .icon{
+    margin-right: 40px;
 }
 .cardProfile .box-divs{
     display: grid;

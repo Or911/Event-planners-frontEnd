@@ -3,6 +3,8 @@ import Button from '@mui/joy/Button';
 import { eventDateFormatIL } from '../../../utilities/eventDateFormat';
 import OpenInNew from '@mui/icons-material/OpenInNew';
 import './FullEventData.css'
+import CloseIcon from '@mui/icons-material/Close';
+import TableTickets from '../../../components/TableTickets/TableTickets';
 
 
 export default function FullEventData({eventData}) {
@@ -25,21 +27,25 @@ export default function FullEventData({eventData}) {
     return (
       <div className='eventManagement'>
 
-            <div className='exitBT' onClick={switchshowFullEvent}>x</div>
+            <div className='exitBT buttonHoverEfect' onClick={switchshowFullEvent}><CloseIcon/></div>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
           <div>
-            <h4>:תאריך</h4>
+            <h4>תאריך:</h4>
             <p> {eventDateFormatIL(eventData.eventDate)}</p>
-            <h4>:מיקום</h4>
+            <h4>מיקום:</h4>
             <p>{eventData.location}</p>
           </div>
         </div>
 
+        <div className='ticketSection'>
+          <TableTickets eventID={eventData._id}/>
+        </div>
         <h2>{eventData.name}</h2>
-        <hr />
+        <div>
+          גשדגשג
+        </div>
         <h3>מארגן: {eventData.organizer}</h3>
-        <h2>:פירוט </h2>
         
         <hr />
         <div className="priceSection">

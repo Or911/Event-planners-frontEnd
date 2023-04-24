@@ -12,16 +12,16 @@ function getuserData(){
       });
     }
 
-    // function getUserEventByID(id){
-    //   return axios.request({
-    //       method: "get",
-    //       url: URL_SERVER + "user/event/" + id,
-    //       headers: {
-    //         Authorization: `Bearer ${localStorage.getItem("token")}`,
-    //       }
-    //     });
-    //   }    
+    function getTicketsOfEvent(id){
+      return axios.request({
+          method: "get",
+          url: URL_SERVER + "userEvent/" + id,
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          }
+        });
+      }    
     
 
 
-export {getuserData }
+export {getuserData , getTicketsOfEvent}

@@ -5,7 +5,12 @@
     margin-left: 10px;
     display: grid;
     grid-template-columns: 1fr  2fr 1fr ;
+    transition: 0.3s;
 
+}
+.cardEventsUser:hover{
+    box-shadow: -1px 1px 5px 2px #00000058;
+    transition: 0.3s;
 }
 .cardEventsUser img{
     width: 150px;
