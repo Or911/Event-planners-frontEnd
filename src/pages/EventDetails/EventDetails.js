@@ -34,7 +34,7 @@ export default function EventDetails({updateNotificationData}) {
     }
     else{
       createTicket(eventData._id, priceTicket).then(()=>{
-        updateNotificationData(`קנית כרטיס (${priceTicket})  ל${eventData.name}`, 'success')
+        updateNotificationData(`קנית כרטיס (${priceTicket}$)  ל${eventData.name}`, 'success')
         navigate("/tickets")
       }).catch((error) => {
         updateNotificationData(` הכרטיסים אזלו או שכרטיס האשראי נכשל`, 'error')
@@ -45,7 +45,6 @@ export default function EventDetails({updateNotificationData}) {
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
-      <ButtonBack/>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
           <div>

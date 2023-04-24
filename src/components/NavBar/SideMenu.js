@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 export default function Menu() {
   const [activeMenu, setActiveMenu] = useState({
-    left: false,
+    right: false,
   });
 
   const pages = ['Home', 'Create event', 'Tickets', 'About Us' ,'profile']
@@ -33,10 +33,10 @@ export default function Menu() {
 
   return (
     <div>
-        <Fragment key={'left'}>
-          <Button onClick={toggleDrawer('left', true)}><MenuIcon sx={{ color: 'white'}} fontSize='large'/></Button>
-          <Drawer anchor={'left'} open={activeMenu['left']} onClose={toggleDrawer('left', false)}>
-            <Box role="presentation" onClick={toggleDrawer('left', false)} onKeyDown={toggleDrawer('left', false)}>
+        <Fragment key={'right'}>
+          <Button onClick={toggleDrawer('right', true)}><MenuIcon sx={{ color: 'white'}} fontSize='large'/></Button>
+          <Drawer anchor={'right'} open={activeMenu['right']} onClose={toggleDrawer('right', false)}>
+            <Box role="presentation" onClick={toggleDrawer('right', false)} onKeyDown={toggleDrawer('right', false)}>
               <List>
                 {pages.map((page , index) => (
                 <Link to={links[index]} key={index} className='linkSideM'>

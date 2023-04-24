@@ -32,23 +32,20 @@ export default function EventSlider({ events }) {
 
   return (
     <div className="eventSlider">
-              <span className="sliderButtonPerv">
-            <div onClick={prevSlide}> <KeyboardArrowLeftIcon fontSize='large' className="arrowBT"/> </div>
-        </span>
+      <span className="sliderButtonPerv">
+        <div onClick={prevSlide}> <KeyboardArrowLeftIcon fontSize='large' className="arrowBT"/> </div>
+      </span>
 
-        {eventSlide.map((event , index) => (
-          <div>
-            <img src={event?.img} alt={event?.name} className='imgEvent' onClick={()=>navigate(`/events/${event._id}`)}/>
+      {eventSlide.map((event , index) => (
+        <div>
+          <img src={event?.img} alt={event?.name} className='imgEvent' onClick={()=>navigate(`/events/${event._id}`)}/>
+        </div>
+      ))}
+      
 
-          </div>
-           
-
-        ))}
-        
-
-        <span className="sliderButtonNext">
-            <div onClick={nextSlide}> <KeyboardArrowRightIcon fontSize="large" className="arrowBT"/></div>
-        </span>
+      <span className="sliderButtonNext">
+          <div onClick={nextSlide}> <KeyboardArrowRightIcon fontSize="large" className="arrowBT"/></div>
+      </span>
     </div>
   );
 }
