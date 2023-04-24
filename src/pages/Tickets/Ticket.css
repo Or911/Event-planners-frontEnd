@@ -7,16 +7,17 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 15px 0px;
+  background-color: white;
 }
 @media only screen and (max-width: 500px) {
-   .ticket{
-      width: 90%;
-   }
+  .ticket {
+    width: 90%;
+  }
 
-   .ticket-text div{
-      width: 70%;
-    }
- }
+  .ticket-text div {
+    width: 70%;
+  }
+}
 .ticket:before,
 .ticket:after {
   content: "";
@@ -56,17 +57,33 @@
   font-size: 2rem;
 }
 
+.ticket-text h1 {
+  text-align: center;
+}
+
 .ticket-text div {
   padding: 20px;
+  text-align: center;
+}
+
+.ticket-text p {
+  padding: 20px;
+  text-align: right;
 }
 
 .ticket-img {
-   position: absolute;
-   z-index: -1;
-   opacity : 0.1;
-   width: 98%;
-   height: 98%;
-   top: 5px;
-   left: 5px;
-   border-radius: 5px;
+  position: absolute;
+  opacity: 0.1;
+  width: 98%;
+  height: 98%;
+  top: 5px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.ticket-qr {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  top: -100px;
 }

@@ -45,7 +45,6 @@ export default function EventDetails({updateNotificationData}) {
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
-      <ButtonBack/>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
           <div>

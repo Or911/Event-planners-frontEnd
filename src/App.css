@@ -1,3 +1,9 @@
+body{
+  direction: rtl;
+}
+div{
+  text-align: right;
+}
 :root {
   --fade: #67646457;
   --purple:#77037B;
