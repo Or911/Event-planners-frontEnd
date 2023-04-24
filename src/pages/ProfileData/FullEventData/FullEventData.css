@@ -1,0 +1,41 @@
+.eventManagement{
+    background-color: rgb(253, 253, 253);
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+.showFullEventBT{
+    position: absolute;
+    right: 150px;
+    top: 30px;
+}
+.exitBT{
+    position: absolute;
+}
+.eventManagement img{
+    max-height: 300px;
+}
+
+.eventManagement .imgSection{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+.eventManagement div h4{
+    margin-top: 15px;
+}
+
+.eventManagement hr{
+    width:60%;
+    text-align:left;
+    margin-left:0;
+    margin-bottom: 10px;
+}

@@ -26,7 +26,7 @@ export default function SnackbarAlerts({notificationData}) {
 
   return (
     <Stack spacing={2}>        
-        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose} >
             <Alert onClose={handleClose} severity={notificationData.severity} sx={{ width: '100%' }}>
               {notificationData.message}
             </Alert>

@@ -1,11 +1,10 @@
 .cardProfile{
     background-color:white;
-    width: 90%;
+    width: 87%;
+    margin-right: 5%;
     margin-left: 5%;
     border-radius: 5px;
-    
-
-    position: relative;
+    /* position: relative; */
 }
 .cardProfile .userSection{
     background-color: rgba(5, 5, 5, 0.889);
@@ -18,26 +17,44 @@
     display: grid;
     grid-template-columns: 6fr 10fr;
     height: 75vh;
+    width: 100%;
+    gap: 20px;
 }
 .box-divs .userDetails{
-    background-color: aqua;
+    background-color: rgb(206, 211, 211);
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 20px;
+    border-style: solid; 
+    border-radius: 5px;
+    padding: 5px;
+    border-color: rgba(79, 78, 78, 0.869);
+    margin: 1px 10px 10px 10px;
+    
 }
-
+.userDetails img{
+    width: 200px;
+    height: 200px;
+}
+.userDetails div{
+    padding: 40px 0 0 0;
+}
 
 
 .cardProfile .userSection h4{
     display:inline;
     padding: 5px;
-    
 }
 .listsEvents{
     
     display: grid;
     grid-template-columns: auto;
     width: 95%;
-    gap: 30px;
+    gap: 10px;
     overflow: auto;
-    height: 300px;
-    border-style: solid , ;
-    
+    height: 430px;
+    border-style: solid; 
+     border-radius: 5px;
+     padding: 5px;
+     border-color: rgba(79, 78, 78, 0.869);
 }

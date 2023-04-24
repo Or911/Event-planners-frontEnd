@@ -4,8 +4,8 @@
     border-radius: 5px;
     margin-left: 10px;
     display: grid;
-    grid-template-columns: 2fr 15fr;
-    position: relative;
+    grid-template-columns: 1fr  2fr 1fr ;
+
 }
 .cardEventsUser img{
     width: 150px;
@@ -13,9 +13,8 @@
     border-radius: 5px;
 }
 .cardEventsUser .buttomBar{
-    position: absolute;
-    bottom: 0px;
-    left: 200px;
+    position: relative;
+    top: 70px;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     gap: 20px;
