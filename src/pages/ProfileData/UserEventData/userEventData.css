@@ -1,0 +1,11 @@
+.cardEventDetails{
+    background-color: rgba(198, 197, 198, 0.906);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.cardEventDetails img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}

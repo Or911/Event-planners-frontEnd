@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getEventData } from "../../ServerAPI/EventAPI";
 import "./EventDetails.css";
 import { Button } from "@mui/material";
@@ -15,10 +15,11 @@ export default function EventDetails({updateNotificationData}) {
   const [ priceTicket , setPriceTicket] = useState("")
   let { id } = useParams();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     getEventData(id).then((event) => {
       setEventData(event.data);
-      console.log(event.data);
     });
     // console.log("EventDetails");
   }, []);
@@ -29,12 +30,12 @@ export default function EventDetails({updateNotificationData}) {
 
   const buyTicket = function () {
     if(priceTicket === ""){
-      console.log('אנא בחר סוג כרטיס')
       updateNotificationData('אנא בחר סוג כרטיס', 'error')
     }
     else{
       createTicket(eventData._id, priceTicket).then(()=>{
         updateNotificationData(`קנית כרטיס (${priceTicket})  ל${eventData.name}`, 'success')
+        navigate("/tickets")
       }).catch((error) => {
         updateNotificationData(` הכרטיסים אזלו או שכרטיס האשראי נכשל`, 'error')
       })

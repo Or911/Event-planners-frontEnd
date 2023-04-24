@@ -11,6 +11,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import { Link } from "react-router-dom";
 
 export default function Menu() {
@@ -18,9 +19,9 @@ export default function Menu() {
     left: false,
   });
 
-  const pages = ['Home', 'Create event', 'Tickets', 'About Us']
-  const links = ['/', '/createEvent', '/tickets' , '/AboutUs']
-  const icons = [<HomeIcon/> , <AddBoxIcon/> , <LocalActivityIcon/>, <Diversity3Icon/>]
+  const pages = ['Home', 'Create event', 'Tickets', 'About Us' ,'profile']
+  const links = ['/', '/createEvent', '/tickets' , '/AboutUs' ,'/profile']
+  const icons = [<HomeIcon/> , <AddBoxIcon/> , <LocalActivityIcon/>, <Diversity3Icon/> , <ManageAccountsIcon/>]
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
