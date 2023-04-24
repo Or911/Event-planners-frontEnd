@@ -25,6 +25,14 @@
 .eventsCategory .eventCard-container{
     width: 250px;
 }
+@media only screen and (max-width: 1200px) {
+    .eventsCategory{
+        grid-template-columns:  auto auto auto;
+        row-gap: 20px;
+        width: 95%;
+    }
+
+  }
 @media only screen and (max-width: 500px) {
     .eventsCategory{
         grid-template-columns: auto;

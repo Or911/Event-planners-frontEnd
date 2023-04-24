@@ -16,7 +16,8 @@ export default function Event({userEvent}) {
             <div className='evenDetails' > 
             <KeyboardArrowUpIcon/>
             <p>{userEvent?.name} </p>
-            <a href={link}>{userEvent?.location}<LocationOnIcon /></a></div>
+            <a href={link}>{userEvent?.location}<LocationOnIcon /></a>
+            </div>
 
         </div>
   )

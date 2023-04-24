@@ -1,0 +1,27 @@
+.cardProfile{
+    background-color:var(--fade);
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    
+
+    position: relative;
+}
+.cardProfile .userSection{
+    background-color: rgba(203, 146, 234, 0.592);
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.cardProfile .userSection h4{
+    display:inline;
+    padding: 5px;
+    
+}
+.cardProfile .listsEvents{
+    
+    display: grid;
+    grid-template-columns: auto;
+    width: 60%;
+    gap: 30px;
+}

@@ -1,4 +1,4 @@
-.event-details .cardEvent{
+.event-details .cardEventDetails{
     background-color: rgba(193, 199, 203, 0.592);
     margin-top: 90px;
     width: 90%;
@@ -19,23 +19,25 @@
 .imgSection div h4{
     margin-top: 15px;
 }
-.cardEvent{
+.cardEventDetails{
     position: relative;
 }
-.cardEvent hr{
+.cardEventDetails hr{
     width:60%;
     text-align:left;
     margin-left:0;
     margin-bottom: 10px;
 }
-.cardEvent .priceSection{
+.cardEventDetails .priceSection{
     position: absolute;
     right:100px;
     bottom: 100px;
+    width: min-content;
+    padding-bottom: 15px;
     
 }
 @media only screen and (min-width: 1350px) {
-    .event-details .cardEvent{
+    .event-details .cardEventDetails{
         width: 70%;
         margin-top: 0;
         margin-left: 15%;
@@ -46,6 +48,40 @@
   }
   .description-Event{
     line-break: anywhere;
-    max-width: 200px;
-    
+    max-width: 60%;
+    padding: 10px;
+  }
+  .cardEventDetails h4{
+    display: inline;
+    margin-left: 30px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .event-details .cardEventDetails{
+
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .event-details .cardEventDetails{
+        width: 95%;
+        padding-top: 10%;
+        padding-left: 8%;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+    }
+    .event-details .imgSection{
+        grid-template-columns: auto;
+    }
+    .description-Event{
+        line-break: anywhere;
+        max-width: 90%;
+        padding: 10px;
+      }
+      .cardEventDetails .priceSection{
+        position: static;    
+    }
+    .event-details img{
+        max-height: 300px;
+        max-width: 300px;
+    }
   }

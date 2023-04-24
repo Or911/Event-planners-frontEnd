@@ -3,12 +3,13 @@ import './CreateEvent.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { uploadImg } from '../../utilities/uploadImg';
-import ButtonBack from '../../components/NavBar/ButtonBack/ButtonBack';
+import ButtonBack from '../../components/ButtonBack/ButtonBack'
 import { MdCloudUpload } from 'react-icons/md'
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 
-export default function CreateEvent() {
+
+export default function CreateEvent({updateNotificationData}) {
   const [name, setName] = useState("")
   const [entertainer, setEntertainer] = useState("")
   const [category, setCategory] = useState("")
@@ -23,8 +24,6 @@ export default function CreateEvent() {
 
   const addEvent = async () => {
     let imgUrl = await uploadImg(document.getElementById('image').files[0])
-    console.log(imgUrl);
-
     axios({
       method: 'post',
       url: 'http://localhost:4000/event',
@@ -38,12 +37,19 @@ export default function CreateEvent() {
         location: location,
         eventDate: eventDate,
         dateCreated: dateCreated,
-        // img: imgUrl,
+         img: imgUrl,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       }
-    }).then(data => console.log(data))
+    }).then(data => {
+      updateNotificationData('יצירת האירוע עברה בהצלחה', 'success')
+      console.log(data)
+    })
+    .catch(err => {
+      updateNotificationData('יצירת האירוע נכשלה', 'error')
+      console.error(err)
+    })
 
     setName('');
     setEntertainer('');

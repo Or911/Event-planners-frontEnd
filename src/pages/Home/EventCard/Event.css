@@ -1,14 +1,4 @@
 
-/* .eventCard {
-    display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: auto;
-    grid-template-areas: 
-      "header header header header"
-      "main main . sidebar"
-      "footer footer footer footer";
-    background-color: darkgray;
-} */
 .eventCard-container{
   overflow: hidden;
   width: 80%;
@@ -20,11 +10,7 @@
   height: 250px;
   border-radius: 5px;
 }
-.eventSlider .imgEvent{
-  width: 100%;
-  transition: 0.5s;
-  height: 200px;
-}
+
 .evenDetails{
   position: absolute;
   bottom: -30%;

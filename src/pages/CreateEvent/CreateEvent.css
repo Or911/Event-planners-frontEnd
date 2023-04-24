@@ -76,7 +76,7 @@
 .description-Event {
     line-break: anywhere;
     max-width: 200px;
-}
+  }
 
 Button {
     color: var(--purple);
