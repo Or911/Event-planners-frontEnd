@@ -122,7 +122,7 @@ export default function CreateEvent({updateNotificationData}) {
           <br></br>
           <br></br>
           <hr />
-          <Button variant="outlined" className='buttonSubmitCreate' onClick={addEvent}>Create</Button>
+          <Button variant="outlined" className='buttonSubmitCreate' onClick={addEvent}>יצירת מופע</Button>
           <div className="price">
             <TextField
               label="מחיר"
