@@ -40,7 +40,7 @@ export default function ProfileData() {
           <div>
             <div className="listsEvents">
               {userEvents.map((eventData) => (
-                <UserEventData eventData={eventData} />
+                <UserEventData eventData={eventData} key={eventData._id}/>
               ))}
             </div>
             <div className="eventDataSection">
