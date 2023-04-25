@@ -1,0 +1,13 @@
+.QrScanner{
+    margin-top: 20px;
+}
+.resultQR{
+    position: relative;
+    right: 0px;
+    top: 90px;
+    
+    
+}
+.QrScanner div{
+    box-shadow: rgba(17, 192, 119, 0.5) 0px 0px 0px 5px inset !important;
+}

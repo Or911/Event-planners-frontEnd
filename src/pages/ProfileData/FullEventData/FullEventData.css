@@ -9,7 +9,8 @@
     top: 170px;
     left: 10px;
     display: grid;
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 4fr 5fr;
+    gap: 10px;
     box-shadow: -1px 1px 12px 2px #000000b8;
     
 }

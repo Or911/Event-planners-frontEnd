@@ -38,6 +38,7 @@ export default function TableTickets({eventID }) {
         getTicketsOfEvent(eventID)
         .then(tickets =>{
             setTickets(tickets.data)
+            console.log(tickets.data);
         })
     },[])
 

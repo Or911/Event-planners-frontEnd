@@ -6,21 +6,29 @@ import './FullEventData.css'
 import CloseIcon from '@mui/icons-material/Close';
 import TableTickets from '../../../components/TableTickets/TableTickets';
 import QrScanner from '../../../components/QrScanner/QrScanner';
+import CropFreeIcon from '@mui/icons-material/CropFree';
+
 
 
 
 
 export default function FullEventData({eventData }) {
-  const onNewScanResult = (decodedText, decodedResult) => {
-    // handle decoded results here
-};
+
   const [showFullEvent, setshowFullEvent] = useState(false);
+  const [Scanner, setScanner] = useState(false);
 
   function switchshowFullEvent(){
     if(showFullEvent){
       setshowFullEvent(false)
     }
     else{setshowFullEvent(true)}
+  }
+
+  function turnScanner(){
+    if(Scanner){
+      setScanner(false)
+    }
+    else{setScanner(true)}
   }
   
   // useEffect(() => {
@@ -35,12 +43,8 @@ export default function FullEventData({eventData }) {
             <div className='exitBT buttonHoverEfect' onClick={switchshowFullEvent}><CloseIcon/></div>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
-          {/* <QrScanner
-          fps={10}
-          qrbox={250}
-          disableFlip={false}
-          qrCodeSuccessCallback={onNewScanResult}
-          /> */}          <div>
+          {Scanner?<QrScanner/>:<div></div>}
+         <div>
             <h4>תאריך:</h4>
             <p> {eventDateFormatIL(eventData.eventDate)}</p>
             <h4>מיקום:</h4>
@@ -53,7 +57,10 @@ export default function FullEventData({eventData }) {
         </div>
         <h2>{eventData.name}</h2>
         <div>
-          גשדגשג
+        <Button  color="success" onClick={turnScanner} startDecorator={<CropFreeIcon/>}>
+      הפעלת סורק
+      </Button>
+          
         </div>
         <h3>מארגן: {eventData.organizer}</h3>
         

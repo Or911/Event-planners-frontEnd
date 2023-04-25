@@ -20,8 +20,18 @@ function getuserData(){
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           }
         });
-      }    
+      } 
+      function confirmTicket(eventID,ticketID){
+        return axios.request({
+            method: "get",
+            url: URL_SERVER + "/confirmTicket",
+            data: {eventID: eventID , ticketID: ticketID},
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            }
+          });
+        }       
     
 
 
-export {getuserData , getTicketsOfEvent}
+export {getuserData , getTicketsOfEvent , confirmTicket}
