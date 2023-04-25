@@ -1,8 +1,9 @@
 import React, {useState} from "react";
   import QrReader from "react-web-qr-reader";
   import './QrScanner.css'
+import { confirmTicket } from "../../ServerAPI/UserDataAPI";
   
-  const QrScanner = () => {
+  const QrScanner = ({eventID}) => {
     const delay = 500;
   
     const previewStyle = {
@@ -15,7 +16,7 @@ import React, {useState} from "react";
     const handleScan = (result) => {
       if (result) {
         setResult("מזהה כרטיס : " + result.data)
-        console.log(result);
+        confirmTicket(eventID ,result.data )
         
       }
     };

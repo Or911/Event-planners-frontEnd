@@ -43,7 +43,7 @@ export default function FullEventData({eventData }) {
             <div className='exitBT buttonHoverEfect' onClick={switchshowFullEvent}><CloseIcon/></div>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
-          {Scanner?<QrScanner/>:<div></div>}
+          {Scanner?<QrScanner eventID={eventData._id}/>:<div></div>}
          <div>
             <h4>תאריך:</h4>
             <p> {eventDateFormatIL(eventData.eventDate)}</p>

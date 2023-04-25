@@ -23,12 +23,12 @@ function getuserData(){
       } 
       function confirmTicket(eventID,ticketID){
         return axios.request({
-            method: "get",
-            url: URL_SERVER + "/confirmTicket",
-            data: {eventID: eventID , ticketID: ticketID},
+            method: "post",
+            url: URL_SERVER + "confirmTicket/",
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
-            }
+            },
+            data: {eventID,ticketID}
           });
         }       
     

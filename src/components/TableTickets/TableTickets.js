@@ -38,7 +38,7 @@ export default function TableTickets({eventID }) {
         getTicketsOfEvent(eventID)
         .then(tickets =>{
             setTickets(tickets.data)
-            console.log(tickets.data);
+            console.log(tickets);
         })
     },[])
 
@@ -58,7 +58,7 @@ export default function TableTickets({eventID }) {
               
               <StyledTableCell align="right">מזהה כרטיס:  {ticket._id}</StyledTableCell>
               <StyledTableCell align="right">מחיר כרטיס:{ticket.price}</StyledTableCell>
-              <StyledTableCell align="right"><img src={ticket.qrCode}  alt='https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png' /></StyledTableCell>
+              <StyledTableCell align="right"><img src={ticket.qrCode}  alt='QRcode' /></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
