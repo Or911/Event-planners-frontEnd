@@ -16,7 +16,7 @@ export default function Ticket({ ticket }) {
           <div> {eventDateFormatIL(ticket.event.eventDate)} </div>
           <div> מיקום: {ticket.event.location} </div>
           <div> מחיר: {ticket.price}$ </div>
-          <img className="ticket-qr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Missing"></img>
+          <img className="ticket-qr" src={ticket.qrCode} alt="Missing"></img>
         </div>
       </div>
     </div>
