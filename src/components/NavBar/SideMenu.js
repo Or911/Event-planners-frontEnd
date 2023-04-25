@@ -19,7 +19,7 @@ export default function Menu() {
     right: false,
   });
 
-  const pages = ['Home', 'Create event', 'Tickets', 'About Us' ,'profile']
+  const pages = ['דף בית', 'יצירת אירוע', 'כרטיסים', 'אודות' ,'פרופיל']
   const links = ['/', '/createEvent', '/tickets' , '/AboutUs' ,'/profile']
   const icons = [<HomeIcon/> , <AddBoxIcon/> , <LocalActivityIcon/>, <Diversity3Icon/> , <ManageAccountsIcon/>]
 

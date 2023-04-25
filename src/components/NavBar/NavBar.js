@@ -20,7 +20,7 @@ export default function NavBar({isLogin , updateLoggedIn}){
     return(
         <div className='navBar'>
             <div className='iconsBar'><SideMenu/></div>  
-            <h1 className='headerName'>event planner </h1>
+            <h1 className='headerName'> מנהל אירועים </h1>
             <button className='loginBt buttonHoverLow' onClick={clickConnection}>{isLogin?'התנתק':'התחבר'}</button>
             <div className='iconsBar'><AccountCircleIcon fontSize='large' /><h3>{isLogin?localStorage.getItem("userName"):null}</h3></div>
     
