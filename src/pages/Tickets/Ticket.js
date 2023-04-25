@@ -15,7 +15,7 @@ export default function Ticket({ ticket }) {
           <h1 onClick={()=>navigate(`/events/${ticket.event._id}`)}> {ticket.event.name} </h1>
           <div> {eventDateFormatIL(ticket.event.eventDate)} </div>
           <div> מיקום: {ticket.event.location} </div>
-          <p> מחיר: {ticket.price}$ </p>
+          <div> מחיר: {ticket.price}$ </div>
           <img className="ticket-qr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Missing"></img>
         </div>
       </div>
