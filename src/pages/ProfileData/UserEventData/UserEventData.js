@@ -23,7 +23,7 @@ export default function UserEventData({eventData}) {
           updateInvited(numOfTickets)
           updatebalance(numOfTickets * priceOfTickets)
         })
-        console.log(UserEventData);
+        console.log("UserEventData");
     },[])
 
   return (

@@ -70,7 +70,7 @@ export default function EventDetails({updateNotificationData}) {
           variant="contained"
           endIcon={<ShoppingCartCheckoutIcon />}
         >
-          buy a ticket
+          <h4>קנה כרטיס</h4>
         </Button>
         <h4> {priceTicket} : מחיר כרטיס</h4>
 

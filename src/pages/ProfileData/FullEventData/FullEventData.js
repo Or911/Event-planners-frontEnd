@@ -5,17 +5,16 @@ import OpenInNew from '@mui/icons-material/OpenInNew';
 import './FullEventData.css'
 import CloseIcon from '@mui/icons-material/Close';
 import TableTickets from '../../../components/TableTickets/TableTickets';
-// import QrScanner from '../../../components/QrScanner/QrScanner';
+import QrScanner from '../../../components/QrScanner/QrScanner';
 
 
 
 
 export default function FullEventData({eventData }) {
-//   const onNewScanResult = (decodedText, decodedResult) => {
-//     // handle decoded results here
-// };
+  const onNewScanResult = (decodedText, decodedResult) => {
+    // handle decoded results here
+};
   const [showFullEvent, setshowFullEvent] = useState(false);
-  console.log(eventData);
 
   function switchshowFullEvent(){
     if(showFullEvent){
@@ -41,8 +40,7 @@ export default function FullEventData({eventData }) {
           qrbox={250}
           disableFlip={false}
           qrCodeSuccessCallback={onNewScanResult}
-          /> */}
-          <div>
+          /> */}          <div>
             <h4>תאריך:</h4>
             <p> {eventDateFormatIL(eventData.eventDate)}</p>
             <h4>מיקום:</h4>
