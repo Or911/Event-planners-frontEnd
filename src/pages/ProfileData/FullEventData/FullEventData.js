@@ -5,9 +5,15 @@ import OpenInNew from '@mui/icons-material/OpenInNew';
 import './FullEventData.css'
 import CloseIcon from '@mui/icons-material/Close';
 import TableTickets from '../../../components/TableTickets/TableTickets';
+// import QrScanner from '../../../components/QrScanner/QrScanner';
 
 
-export default function FullEventData({eventData}) {
+
+
+export default function FullEventData({eventData }) {
+//   const onNewScanResult = (decodedText, decodedResult) => {
+//     // handle decoded results here
+// };
   const [showFullEvent, setshowFullEvent] = useState(false);
   console.log(eventData);
 
@@ -30,6 +36,12 @@ export default function FullEventData({eventData}) {
             <div className='exitBT buttonHoverEfect' onClick={switchshowFullEvent}><CloseIcon/></div>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
+          {/* <QrScanner
+          fps={10}
+          qrbox={250}
+          disableFlip={false}
+          qrCodeSuccessCallback={onNewScanResult}
+          /> */}
           <div>
             <h4>תאריך:</h4>
             <p> {eventDateFormatIL(eventData.eventDate)}</p>
@@ -39,7 +51,7 @@ export default function FullEventData({eventData}) {
         </div>
 
         <div className='ticketSection'>
-          <TableTickets eventID={eventData._id}/>
+          <TableTickets eventID={eventData._id} />
         </div>
         <h2>{eventData.name}</h2>
         <div>

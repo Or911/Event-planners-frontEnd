@@ -5,7 +5,6 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { getTicketsOfEvent } from '../../ServerAPI/UserDataAPI';
@@ -30,25 +29,15 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
   
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  }
-  
-  const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
 
 
-  ];
-
-export default function TableTickets({eventID}) {
+export default function TableTickets({eventID }) {
     const [tickets , setTickets] = useState([])
 
     useEffect(()=>{
         getTicketsOfEvent(eventID)
         .then(tickets =>{
-            console.log(tickets);
-            setTickets(tickets)
+            setTickets(tickets.data)
         })
     },[])
 
@@ -58,25 +47,17 @@ export default function TableTickets({eventID}) {
     <div className='tableTickets'>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          {/* <TableRow className='tableTickets'>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow> */}
-        </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name} >
+          {tickets.map((ticket , index) => (
+            <StyledTableRow key={ticket._id} >
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {ticket.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <h4>כרטיס: {index+1}</h4>
+              
+              <StyledTableCell align="right">מזהה כרטיס:  {ticket._id}</StyledTableCell>
+              <StyledTableCell align="right">מחיר כרטיס:{ticket.price}</StyledTableCell>
+              <StyledTableCell align="right"><img  src='https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png' alt=''/></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

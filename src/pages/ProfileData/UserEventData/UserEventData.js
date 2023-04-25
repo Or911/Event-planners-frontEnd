@@ -6,17 +6,25 @@ import Badge from '@mui/material/Badge';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import SettingsBT from '../../../components/SettingsBT/SettingsBT';
 import FullEventData from '../FullEventData/FullEventData';
+import { getTicketsOfEvent } from '../../../ServerAPI/UserDataAPI';
+
 
 
 
 export default function UserEventData({eventData}) {
-  const [invited , updateInvited] = useState(10)
-  const [balance , updatebalance] = useState(10)
+  const [invited , updateInvited] = useState(0)
+  const [balance , updatebalance] = useState(0)
 
     useEffect(()=>{
-      updatebalance(invited * eventData.price[0].standard)
-
-    },[invited])
+      getTicketsOfEvent(eventData._id)
+        .then(tickets =>{
+         let numOfTickets = tickets.data.length
+         let priceOfTickets = eventData.price[0].standard
+          updateInvited(numOfTickets)
+          updatebalance(numOfTickets * priceOfTickets)
+        })
+        console.log(UserEventData);
+    },[])
 
   return (
     <div className='cardEventsUser'>
@@ -34,7 +42,7 @@ export default function UserEventData({eventData}) {
           <MonetizationOnIcon fontSize='large'/>
         </Badge>
         </div>
-        <FullEventData eventData={eventData}/>
+        <FullEventData eventData={eventData} />
         </div>
         <SettingsBT/>
     </div>
