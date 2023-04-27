@@ -1,7 +1,6 @@
 import React from "react";
 import "./Ticket.css";
 import { useNavigate} from 'react-router-dom';
-import ButtonBack from "../../components/ButtonBack/ButtonBack";
 import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 export default function Ticket({ ticket }) {
@@ -13,11 +12,11 @@ export default function Ticket({ ticket }) {
       <img className="ticket-img" src={ticket.event.img} alt="Missing"></img>
       <div className="ticket-content">
         <div className="ticket-text">
-          <div className="ticket-back"><ButtonBack/></div>
           <h1 onClick={()=>navigate(`/events/${ticket.event._id}`)}> {ticket.event.name} </h1>
           <div> {eventDateFormatIL(ticket.event.eventDate)} </div>
           <div> מיקום: {ticket.event.location} </div>
           <div> מחיר: {ticket.price}$ </div>
+          <img className="ticket-qr" src={ticket.qrCode} alt="Missing"></img>
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 import axios from "axios";
 const URL_SERVER = `http://localhost:4000/`;
 
-function getEventsCategory() {
+function getEventsCategory(category , date) {
     
     return axios.request({
       method: "get",
       url: URL_SERVER + "eventsCategory",
+      params: {category : category , date : date , id : 'category'}
     });
   }
 

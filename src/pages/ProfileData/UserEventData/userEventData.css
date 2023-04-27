@@ -4,15 +4,23 @@
     border-radius: 5px;
     margin-left: 10px;
     display: grid;
-    grid-template-columns: 2fr 15fr;
+    grid-template-columns: 1fr  2fr 1fr ;
+    transition: 0.3s;
+
+}
+.cardEventsUser:hover{
+    box-shadow: -1px 1px 5px 2px #00000058;
+    transition: 0.3s;
 }
 .cardEventsUser img{
     width: 150px;
     height: 150px;
     border-radius: 5px;
 }
-.cardEventsUser .buttonSettings{
+.cardEventsUser .buttomBar{
     position: relative;
-    left: 350px;
-    bottom: 190px;
+    top: 70px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px;
 }

@@ -1,7 +1,7 @@
 .eventSlider {
     display: grid;
     grid-template-columns: 1fr 12fr 1fr;
-  width: 100%;
+    width: 50%;
 
 }
 

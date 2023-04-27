@@ -1,0 +1,12 @@
+
+.buttonSettings{
+    position: relative;
+    right:150px;
+    top: 5px;
+    z-index: 1;
+}
+.locked{
+    background-color: rgba(120, 125, 125, 0.561);
+    position: relative;
+    height: 110px;
+}

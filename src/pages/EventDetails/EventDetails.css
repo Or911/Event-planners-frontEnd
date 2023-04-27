@@ -2,7 +2,7 @@
     background-color: rgba(193, 199, 203, 0.592);
     margin-top: 90px;
     width: 90%;
-    margin-left: 5%;
+    margin-right: 2%;
     border-radius: 5px;
     padding: 10px;
     position: relative;
@@ -40,7 +40,7 @@
     .event-details .cardEventDetails{
         width: 70%;
         margin-top: 0;
-        margin-left: 15%;
+        margin-right: 15%;
     }
     .event-details img{
         max-height: 500px;

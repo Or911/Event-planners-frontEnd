@@ -1,0 +1,53 @@
+.eventManagement{
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    z-index: 10;
+    top: 170px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    gap: 10px;
+    box-shadow: -1px 1px 12px 2px #000000b8;
+    
+}
+.showFullEventBT{
+    position: absolute;
+    right: 150px;
+    top: 30px;
+}
+.exitBT{
+    position: absolute;
+
+}
+.eventManagement img{
+    max-height: 300px;
+    box-shadow: -1px 1px 12px 2px #000000b8;
+}
+
+.eventManagement .imgSection{
+    display: grid;
+    grid-template-columns: 8fr 8fr;
+
+}
+.eventManagement div h4{
+    margin-top: 15px;
+}
+
+.eventManagement hr{
+    width:60%;
+    text-align:left;
+    margin-left:0;
+    margin-bottom: 10px;
+}
+.ticketSection{
+    border-style: solid; 
+    border-radius: 5px;
+    /* padding: 5px; */
+    
+
+    border-color: rgba(79, 78, 78, 0.869);
+}

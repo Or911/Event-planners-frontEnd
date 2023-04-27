@@ -1,3 +1,9 @@
+body{
+  direction: rtl;
+}
+div{
+  text-align: right;
+}
 :root {
   --fade: #67646457;
   --purple:#77037B;
@@ -12,4 +18,25 @@
   z-index: -1;
   width: 100%;
   height: 100%;
+}
+.buttonHoverEfect{
+  transition: 0.3s;
+}
+.buttonHoverEfect:hover{
+  transform: scale(1.5);
+  transition: 0.3s;
+}
+.buttonHoverLow{
+  transition: 0.3s;
+}
+.buttonHoverLow:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+.cardHoverLow{
+  transition: 0.3s;
+}
+.cardHoverLow:hover{
+  transform: scale(1.03);
+  transition: 0.3s;
 }
