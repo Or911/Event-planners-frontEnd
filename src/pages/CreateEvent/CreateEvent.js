@@ -33,7 +33,7 @@ export default function CreateEvent({updateNotificationData}) {
         category: category,
         description: description,
         price: [{ "standard": price }],
-        like: like,
+        likes: like,
         location: location,
         eventDate: eventDate,
         dateCreated: dateCreated,
