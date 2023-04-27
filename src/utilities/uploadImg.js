@@ -6,7 +6,7 @@ var form = new FormData();
 form.append("image", img);
 
 var settings = {
-  "url": "https://api.imgbb.com/1/upload?expiration=600&key=06ee204e2f47dfe5dc6663253bd6bbd6",
+  "url": "https://api.imgbb.com/1/upload?key=06ee204e2f47dfe5dc6663253bd6bbd6",
   "method": "POST",
   "timeout": 0,
   "processData": false,
