@@ -8,5 +8,6 @@
 .locked{
     background-color: rgba(120, 125, 125, 0.561);
     position: relative;
-    height: 110px;
+    height: 60px;
+    border-radius:  5px;
 }

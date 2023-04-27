@@ -1,8 +1,6 @@
 .cardEventsUser{
     background-color: rgba(198, 197, 198, 0.906);
-    padding: 5px;
     border-radius: 5px;
-    margin-left: 10px;
     display: grid;
     grid-template-columns: 1fr  2fr 1fr ;
     transition: 0.3s;
@@ -23,4 +21,14 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     gap: 20px;
+}
+@media only screen and (max-width: 500px) {
+    .cardEventsUser .buttomBar{
+        position: relative;
+        top: 45px;
+        right: 15px;
+        display: grid;
+        grid-template-columns: auto auto ;
+        gap: 0px;
+    }
 }

@@ -27,24 +27,24 @@ export default function ProfileData() {
           <div className="userDetails">
             <img src={userImage} />
             <div>
-              <h3>שם משתמש: {localStorage.getItem("userName")}</h3>
-              <h3>סוג משתמש: {userEvents[0] ? "מנהל" : "רגיל"}</h3>
-              <h3>סטסטוס: פעיל</h3>
-              <h3> מספר מופעים שפעילים: {userEvents.length}</h3>
-              <h3> סכום הכנסות: {10} </h3>
+              <h3>שם משתמש: <span>{localStorage.getItem("userName")}</span></h3>
+              <h3>סוג משתמש: <span>{userEvents[0] ? "מנהל" : "רגיל"}</span></h3>
+              <h3> סטטוס:<span>פעיל</span> </h3>
+              <h3> מספר מופעים שפעילים: <span>{userEvents.length}</span></h3>
+              <h3> סכום הכנסות: <span>{10} </span></h3>
             </div>
             <div>
-              <img src={graf} />
+              <img  src={graf}/>
             </div>
           </div>
           <div>
+            <div className="eventDataSection">
+              <h3>ארועים פעילים</h3>
+            </div>
             <div className="listsEvents">
               {userEvents.map((eventData) => (
                 <UserEventData eventData={eventData} key={eventData._id}/>
               ))}
-            </div>
-            <div className="eventDataSection">
-              עוד מידע 
             </div>
           </div>
         </div>

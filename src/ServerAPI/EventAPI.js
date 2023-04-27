@@ -5,7 +5,7 @@ function getEventsCategory(category , date) {
     
     return axios.request({
       method: "get",
-      url: URL_SERVER + "eventsCategory",
+      url: URL_SERVER + "events",
       params: {category : category , date : date , id : 'category'}
     });
   }
