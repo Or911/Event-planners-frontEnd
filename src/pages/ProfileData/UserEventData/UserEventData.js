@@ -7,6 +7,7 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import SettingsBT from '../../../components/SettingsBT/SettingsBT';
 import FullEventData from '../FullEventData/FullEventData';
 import { getTicketsOfEvent } from '../../../ServerAPI/UserDataAPI';
+import { deleteEvent } from '../../../ServerAPI/EventAPI';
 
 
 
@@ -45,6 +46,7 @@ export default function UserEventData({eventData}) {
         <FullEventData eventData={eventData} />
         </div>
         <SettingsBT/>
+        <button onClick={() => deleteEvent(eventData._id)}> Delete </button>
     </div>
   )
 }

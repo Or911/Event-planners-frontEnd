@@ -25,4 +25,15 @@ function getEventData(idEvent) {
   });
 }
 
-export { getEvents , getEventData , getEventsCategory};
+function deleteEvent(eventId){
+  return axios.request({
+    method: "delete",
+    url: URL_SERVER + "event/" + eventId,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    
+  }).then((res)=>{console.log(res)});
+}
+
+export { getEvents , getEventData , getEventsCategory , deleteEvent};

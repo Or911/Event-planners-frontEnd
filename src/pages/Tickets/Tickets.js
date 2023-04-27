@@ -1,6 +1,7 @@
 import { getTickets } from "../../ServerAPI/TicketAPI";
 import { useEffect, useState } from "react";
 import Ticket from "./Ticket";
+import "./Tickets.css";
 
 export default function Tickets() {
   const [tickets, setTickets] = useState([]);
