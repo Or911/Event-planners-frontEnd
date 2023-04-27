@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Button from '@mui/joy/Button';
 import { eventDateFormatIL } from '../../../utilities/eventDateFormat';
 import OpenInNew from '@mui/icons-material/OpenInNew';
@@ -31,11 +31,6 @@ export default function FullEventData({eventData }) {
     else{setScanner(true)}
   }
   
-  // useEffect(() => {
-  //   getUserEventByID().then((event) => setUserEvent(event.data));
-  //   console.log("FullEventData");
-  // }, []);
-
   if(showFullEvent){
     return (
       <div className='eventManagement'>

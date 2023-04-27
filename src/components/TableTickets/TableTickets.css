@@ -2,5 +2,18 @@
     max-height: 300px;
     height: 300px;
     overflow: auto;
+    
 }
-
+.usedTicket{
+    background-color: rgb(23, 212, 149);
+    /* border-style: solid;  */
+    /* border-radius: 5px;
+    padding: 5px;
+    border-color: rgba(79, 78, 78, 0.869); */
+}
+.TicketRow{
+    border-style: solid; 
+    border-radius: 5px;
+    padding: 5px;
+    border-color: rgba(79, 78, 78, 0.869);
+}
