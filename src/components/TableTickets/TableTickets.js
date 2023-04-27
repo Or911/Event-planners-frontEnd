@@ -48,17 +48,18 @@ export default function TableTickets({eventID }) {
     <div className='tableTickets'>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableBody>
+        <TableBody >
           {tickets.map((ticket , index) => (
             <StyledTableRow key={ticket._id} >
-              <StyledTableCell component="th" scope="row">
+              {/* <StyledTableCell component="th" scope="row" > */}
                 {ticket.name}
-              </StyledTableCell>
-              <h4>כרטיס: {index+1}</h4>
+              {/* </StyledTableCell> */}
+
               
-              <StyledTableCell align="right">מזהה כרטיס:  {ticket._id}</StyledTableCell>
-              <StyledTableCell align="right">מחיר כרטיס:{ticket.price}</StyledTableCell>
-              <StyledTableCell align="right"><img src={ticket.qrCode}  alt='QRcode' /></StyledTableCell>
+              <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}>כרטיס: {index+1}</StyledTableCell >
+              <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}>מזהה כרטיס:  {ticket._id}</StyledTableCell >
+              <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}>מחיר כרטיס:{ticket.price}</StyledTableCell>
+              <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}><img src={ticket.qrCode}  alt='QRcode' /></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

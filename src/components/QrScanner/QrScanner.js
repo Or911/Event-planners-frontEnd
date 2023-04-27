@@ -4,7 +4,8 @@ import React, {useState} from "react";
 import { confirmTicket } from "../../ServerAPI/UserDataAPI";
   
   const QrScanner = ({eventID}) => {
-    const delay = 500;
+    const delay = 4000;
+    
   
     const previewStyle = {
       height: 240,
@@ -16,7 +17,10 @@ import { confirmTicket } from "../../ServerAPI/UserDataAPI";
     const handleScan = (result) => {
       if (result) {
         setResult("מזהה כרטיס : " + result.data)
-        confirmTicket(eventID ,result.data )
+        console.log(1)
+        confirmTicket(eventID ,result.data ).then((result)=>{
+          console.log(result)
+        })
         
       }
     };
@@ -32,6 +36,7 @@ import { confirmTicket } from "../../ServerAPI/UserDataAPI";
           style={previewStyle}
           onError={handleError}
           onScan={handleScan}
+          
         />
         <p className="resultQR">{result}</p>
       </div>
