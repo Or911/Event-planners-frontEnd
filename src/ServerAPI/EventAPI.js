@@ -1,22 +1,14 @@
 import axios from "axios";
 const URL_SERVER = `http://localhost:4000/`;
 
-function getEventsCategory(category , date) {
+function getEvents(category , date ) {
     
     return axios.request({
       method: "get",
       url: URL_SERVER + "events",
-      params: {category : category , date : date , id : 'category'}
+      params: {category : category , date : new Date(date).toISOString() , id : 'category'}
     });
   }
-
-function getEvents() {
-    
-  return axios.request({
-    method: "get",
-    url: URL_SERVER + "events",
-  });
-}
 
 function getEventData(idEvent) {
   return axios.request({
@@ -25,4 +17,15 @@ function getEventData(idEvent) {
   });
 }
 
-export { getEvents , getEventData , getEventsCategory};
+function deleteEvent(eventId){
+  return axios.request({
+    method: "delete",
+    url: URL_SERVER + "event/" + eventId,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    
+  }).then((res)=>{console.log(res)});
+}
+
+export { getEvents , getEventData, deleteEvent};
