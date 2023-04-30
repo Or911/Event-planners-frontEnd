@@ -32,7 +32,7 @@ function App() {
   },[])
 
   return (
-    <Router>
+    <Router  basename="/">
       <img src={background} className="background" alt=""/>
       <NavBar isLogin={isLogin} updateLoggedIn={updateLoggedIn} />
       <Routes>
