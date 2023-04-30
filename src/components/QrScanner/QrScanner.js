@@ -3,8 +3,8 @@ import React, {useState} from "react";
   import './QrScanner.css'
 import { confirmTicket } from "../../ServerAPI/UserDataAPI";
   
-  const QrScanner = ({eventID}) => {
-    const delay = 4000;
+  const QrScanner = ({eventID , cardValidation}) => {
+    const delay = 15000;
     
   
     const previewStyle = {
@@ -20,13 +20,16 @@ import { confirmTicket } from "../../ServerAPI/UserDataAPI";
         console.log(1)
         confirmTicket(eventID ,result.data ).then((result)=>{
           console.log(result)
+          cardValidation(result.data)
+        }).catch(error =>{
+          cardValidation(error.response.data);
         })
         
       }
     };
   
     const handleError = (error) => {
-      console.log(error);
+      cardValidation(error.response.data);
     };
   
     return (

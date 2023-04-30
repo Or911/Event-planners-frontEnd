@@ -1,0 +1,36 @@
+.successAlertQRcode{
+    position: absolute;
+    background-color: green;
+    z-index: 11;
+    width: 400px;
+    height: 400px;
+    right: 37%;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 45px;
+    box-shadow: -1px 1px 12px 2px #000;
+}
+.errorAlertQRcode{
+    position: absolute;
+    background-color: rgba(205, 31, 31, 0.906);
+    z-index: 11;
+    width: 400px;
+    height: 400px;
+    right: 37%;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 45px;
+    box-shadow: -1px 1px 12px 2px #000;
+}
+@media only screen and (max-width: 500px) {
+    .errorAlertQRcode{
+        top: 190px;
+        right: 0px;
+    }
+    .successAlertQRcode{
+        top: 190px;
+        right: 0px;
+    }
+  }
