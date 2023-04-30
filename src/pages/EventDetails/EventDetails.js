@@ -10,9 +10,9 @@ import SelectTickets from "../../components/selectTickets/SelectTickets";
 import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 
-export default function EventDetails({updateNotificationData}) {
+export default function EventDetails({ updateNotificationData }) {
   const [eventData, setEventData] = useState({});
-  const [ priceTicket , setPriceTicket] = useState("")
+  const [priceTicket, setPriceTicket] = useState("")
   let { id } = useParams();
 
   const navigate = useNavigate();
@@ -24,16 +24,16 @@ export default function EventDetails({updateNotificationData}) {
     // console.log("EventDetails");
   }, []);
 
-  function updatePriceTicket(price){
+  function updatePriceTicket(price) {
     setPriceTicket(price)
   }
 
   const buyTicket = function () {
-    if(priceTicket === ""){
+    if (priceTicket === "") {
       updateNotificationData('אנא בחר סוג כרטיס', 'error')
     }
-    else{
-      createTicket(eventData._id, priceTicket).then(()=>{
+    else {
+      createTicket(eventData._id, priceTicket).then(() => {
         updateNotificationData(`קנית כרטיס (${priceTicket}$)  ל${eventData.name}`, 'success')
         navigate("/tickets")
       }).catch((error) => {
@@ -41,7 +41,20 @@ export default function EventDetails({updateNotificationData}) {
       })
     }
   };
-  
+
+  function doesLikeTheEvent() {
+    //console.log("eventData");
+      if (eventData?.likes?.includes(localStorage.getItem("userName"))) {
+        return false
+      }
+      return true
+
+}
+
+  useEffect(() => {
+    doesLikeTheEvent()
+    });
+
   return (
     <div className="page event-details">
       <div className="cardEventDetails">
@@ -52,6 +65,7 @@ export default function EventDetails({updateNotificationData}) {
             <p> {eventDateFormatIL(eventData.eventDate)}</p>
             <h4>:מיקום</h4>
             <p>{eventData.location}</p>
+            <h4> {doesLikeTheEvent() ?  "": <p>אתה &#128148; המופע הזה</p> }</h4>
           </div>
         </div>
 
@@ -63,7 +77,7 @@ export default function EventDetails({updateNotificationData}) {
         <hr />
         <div className="priceSection">
           <h4>:סוג כרטיס</h4>
-          <SelectTickets tickets={eventData.price} updatePriceTicket={updatePriceTicket}/>
+          <SelectTickets tickets={eventData.price} updatePriceTicket={updatePriceTicket} />
         </div>
         <Button
           onClick={buyTicket}

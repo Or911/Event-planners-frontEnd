@@ -60,6 +60,7 @@ export default function CreateEvent({updateNotificationData}) {
     setLocation('');
     setEventDate('');
     setDateCreated('');
+    setImage('');
     // document.getElementById('imgInput').reset()
   }
 
@@ -68,7 +69,7 @@ export default function CreateEvent({updateNotificationData}) {
     <div className='page event-create'>
       <form >
         <div className='createEvent'>
-          <ButtonBack />
+          <div className='Back'><ButtonBack /></div>
           <div className='imgSection'>
             <div className="imgUplodform" onClick={() => document.querySelector(".input-field").click()}>
               <input id='image' type="file" multiple accept="image/*" className='input-field' hidden
