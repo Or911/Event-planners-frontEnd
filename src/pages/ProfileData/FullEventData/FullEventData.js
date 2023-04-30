@@ -86,7 +86,7 @@ export default function FullEventData({eventData }) {
         </div>
         <h3>מארגן: {eventData.organizer}</h3>
         
-        <hr />
+
         <div className="priceSection">
           <h4>:סוג כרטיס</h4>
 
