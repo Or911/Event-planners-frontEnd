@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import { confirmTicket } from "../../ServerAPI/UserDataAPI";
   
   const QrScanner = ({eventID , cardValidation}) => {
-    const delay = 15000;
+    const delay = 10000;
     
   
     const previewStyle = {
