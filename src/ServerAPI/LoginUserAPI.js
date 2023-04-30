@@ -1,5 +1,6 @@
 import axios from "axios";
-const URL_SERVER = `http://localhost:4000/`;
+import { SERVER_URL } from "../utilities/conectsToAPIs";
+const URL_SERVER = SERVER_URL;
 
 function signUp(userInput) {
   return axios.request({

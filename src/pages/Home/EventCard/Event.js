@@ -7,6 +7,7 @@ import Heart from "react-animated-heart";
 import { useState , useEffect} from 'react'
 import axios from 'axios' 
 import { eventDateFormatIL } from '../../../utilities/eventDateFormat';
+import { SERVER_URL } from '../../../utilities/conectsToAPIs';
 
 export default function Event({ userEvent }) {
   // let link = `https://waze.com/ul?q=${userEvent?.location}&navigate=yes`
@@ -20,7 +21,7 @@ export default function Event({ userEvent }) {
     let userName=localStorage.getItem("userName")
     axios({
       method: 'put',
-      url: 'http://localhost:4000/like',
+      url: SERVER_URL + 'like',
       data: {
         userName: userName,
         eventId:userEvent._id,

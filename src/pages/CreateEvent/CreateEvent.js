@@ -7,6 +7,7 @@ import ButtonBack from '../../components/ButtonBack/ButtonBack'
 import { MdCloudUpload } from 'react-icons/md'
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
+import { SERVER_URL } from '../../utilities/conectsToAPIs';
 
 
 export default function CreateEvent({updateNotificationData}) {
@@ -26,7 +27,7 @@ export default function CreateEvent({updateNotificationData}) {
     let imgUrl = await uploadImg(document.getElementById('image').files[0])
     axios({
       method: 'post',
-      url: 'http://localhost:4000/event',
+      url: SERVER_URL + 'event',
       data: {
         name: name,
         entertainer: entertainer,
