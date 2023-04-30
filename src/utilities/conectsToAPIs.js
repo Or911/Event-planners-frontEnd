@@ -3,6 +3,6 @@
   : "https://events-servises.onrender.com/";
 
   const UPLOAD_IMG_URL = process.env.UPLOAD_IMG_SERVER_URI? process.env.UPLOAD_IMG_SERVER_URI
-  : "https://api.imgbb.com/1/upload?key=";
+  : null;
 
 export { SERVER_URL, UPLOAD_IMG_URL}
