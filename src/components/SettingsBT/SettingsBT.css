@@ -1,13 +1,17 @@
 
-.buttonSettings{
+.buttonRemoveEvent{
     position: relative;
     right:150px;
     top: 5px;
-    z-index: 1;
+    transition: 1s;
 }
-.locked{
-    background-color: rgba(120, 125, 125, 0.561);
-    position: relative;
-    height: 60px;
-    border-radius:  5px;
+.buttonRemoveEvent:hover{
+    color: red;
+    transition: 0.5s;
+}
+@media only screen and (max-width: 500px) {
+    .buttonRemoveEvent{
+        right: 30px;
+        top: 5px;
+    } 
 }

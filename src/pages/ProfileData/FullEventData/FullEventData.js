@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState  , useEffect} from 'react'
 import Button from '@mui/joy/Button';
 import { eventDateFormatIL } from '../../../utilities/eventDateFormat';
 import OpenInNew from '@mui/icons-material/OpenInNew';
@@ -7,6 +7,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import TableTickets from '../../../components/TableTickets/TableTickets';
 import QrScanner from '../../../components/QrScanner/QrScanner';
 import CropFreeIcon from '@mui/icons-material/CropFree';
+import { getTicketsOfEvent } from '../../../ServerAPI/UserDataAPI';
+import MassageScan from './MassageScan/MassageScan';
 
 
 
@@ -16,6 +18,28 @@ export default function FullEventData({eventData }) {
 
   const [showFullEvent, setshowFullEvent] = useState(false);
   const [Scanner, setScanner] = useState(false);
+  const [tickets , setTickets] = useState([])
+  const [alertValidation , setAlertValidation] = useState(false)
+
+  useEffect(()=>{
+      getTicketsOfEvent(eventData._id)
+      .then(tickets =>{
+          setTickets(tickets.data)
+          console.log("tickets");
+      })
+  },[])
+  function cardValidation(massage){
+    getTicketsOfEvent(eventData._id)
+    .then(tickets =>{
+        setTickets(tickets.data)
+        setAlertValidation(massage )
+        setTimeout(()=>{
+          setAlertValidation(false)
+        },3000)
+
+    })
+  }
+
 
   function switchshowFullEvent(){
     if(showFullEvent){
@@ -33,12 +57,15 @@ export default function FullEventData({eventData }) {
   
   if(showFullEvent){
     return (
+      <>
+      
+      {alertValidation?<MassageScan MassageScan={alertValidation}/>:null}
       <div className='eventManagement'>
 
             <div className='exitBT buttonHoverEfect' onClick={switchshowFullEvent}><CloseIcon/></div>
         <div className="imgSection">
           <img src={eventData.img} alt={eventData.name} />
-          {Scanner?<QrScanner eventID={eventData._id}/>:<div></div>}
+          {Scanner?<QrScanner eventID={eventData._id} cardValidation={cardValidation}/>:<div></div>}
          <div>
             <h4>תאריך:</h4>
             <p> {eventDateFormatIL(eventData.eventDate)}</p>
@@ -48,7 +75,7 @@ export default function FullEventData({eventData }) {
         </div>
 
         <div className='ticketSection'>
-          <TableTickets eventID={eventData._id} />
+          <TableTickets tickets={tickets} />
         </div>
         <h2>{eventData.name}</h2>
         <div>
@@ -59,12 +86,13 @@ export default function FullEventData({eventData }) {
         </div>
         <h3>מארגן: {eventData.organizer}</h3>
         
-        <hr />
+
         <div className="priceSection">
           <h4>:סוג כרטיס</h4>
 
         </div>
       </div>
+      </>
     )
   }
   else{

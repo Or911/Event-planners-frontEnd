@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {UPLOAD_IMG_URL} from './conectsToAPIs'
 
 
 function uploadImg(img){
@@ -6,7 +7,7 @@ var form = new FormData();
 form.append("image", img);
 
 var settings = {
-  "url": "https://api.imgbb.com/1/upload?key=06ee204e2f47dfe5dc6663253bd6bbd6",
+  "url": UPLOAD_IMG_URL,
   "method": "POST",
   "timeout": 0,
   "processData": false,

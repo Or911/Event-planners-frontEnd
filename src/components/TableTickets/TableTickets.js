@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 import './TableTickets.css'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -7,7 +7,7 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { getTicketsOfEvent } from '../../ServerAPI/UserDataAPI';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -23,7 +23,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.action.hover,
     },
-    // hide last border
     '&:last-child td, &:last-child th': {
       border: 0,
     },
@@ -31,16 +30,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
 
 
-export default function TableTickets({eventID }) {
-    const [tickets , setTickets] = useState([])
+export default function TableTickets({tickets }) {
 
-    useEffect(()=>{
-        getTicketsOfEvent(eventID)
-        .then(tickets =>{
-            setTickets(tickets.data)
-            console.log(tickets);
-        })
-    },[])
 
   return (
     <>

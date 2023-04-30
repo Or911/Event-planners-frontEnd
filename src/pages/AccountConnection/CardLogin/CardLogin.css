@@ -17,7 +17,7 @@ text-decoration: none;
 .cardLogin {
   height: 520px;
   width: 400px;
-  background-color: rgba(255, 255, 255, 0.234);
+  background-color: rgb(255, 255, 255);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 55%;
@@ -33,6 +33,11 @@ text-decoration: none;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+}
+.cardLogin p{
+  position: relative;
+  bottom: 40px;
+  left: 30px;
 }
 .cardLogin h3 {
   font-size: 32px;
@@ -51,24 +56,24 @@ text-decoration: none;
   display: block;
   height: 50px;
   width: 100%;
-  background-color:var(--bordo);
+  background-color:#FFB900;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
-  color: white;
+  color: black;
 }
 ::placeholder {
-  color: #e5e5e5;
+  color: #000000;
 }
 .cardLogin button {
   margin-top: 50px;
   width: 100%;
-  background-color: var(--purple);
-  color: var(--white);
+  background-color: #FFB900;
+  color: black;
   padding: 15px 0;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
@@ -87,11 +92,14 @@ text-decoration: none;
   text-align: center;
 }
 .social div:hover {
-  background-color:var(--bordo);
+  background-color:#FFB900;
 }
 .social .fb {
-  margin-left: 25px;
+  margin-right: 25px;
 }
-.social i {
-  margin-right: 4px;
+@media only screen and (max-width: 500px) {
+  .cardLogin{
+    height: 520px;
+    width: 90%;
+  } 
 }
