@@ -1,30 +1,11 @@
 .ticket {
   position: relative;
-  box-sizing: border-box;
   width: 500px;
   height: 500px;
   margin: 150px auto 0;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 15px 0px;
   z-index: 0;
-}
-@media only screen and (max-width: 300px) {
-  .ticket {
-    width: 80%;
-  }
-
-  .ticket-text div {
-    width: 80%;
-  }
-
-  .ticket-qr{
-    position: relative;
-    width: 20%;
-    height: 20%;
-    top: -50px;
-    right: 50px;
-  }
 }
 .ticket:before,
 .ticket:after {
@@ -32,7 +13,7 @@
   position: absolute;
   left: 5px;
   height: 6px;
-  width: 480px;
+  width:480px;
 }
 .ticket:before {
   top: -5px;
@@ -97,4 +78,56 @@
   height: 40%;
   top: 10px;
   right: 100px;
+}
+@media only screen and (max-width: 500px) {
+  .ticket {
+    width: 90%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .ticket-text div {
+    width: 90%;
+  }
+  .ticket-text div{
+    padding: 0;
+  }
+  .ticket-qr{
+    position: relative;
+    width: 60%;
+    height: 60%;
+    top: 50px;
+    right: 60px;
+  }
+  .ticket-text {
+    width: auto;
+  }
+  .ticket:before,
+.ticket:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  height: 6px;
+  width:291px;
+}
+.ticket:before {
+  top: -5px;
+  background: radial-gradient(
+      circle,
+      transparent,
+      transparent 50%,
+      #fbfbfb 50%,
+      #fbfbfb 100%
+    ) -7px -8px / 16px 16px repeat-x;
+}
+.ticket:after {
+  bottom: -5px;
+  background: radial-gradient(
+      circle,
+      transparent,
+      transparent 50%,
+      #fbfbfb 50%,
+      #fbfbfb 100%
+    ) -7px -2px / 16px 16px repeat-x;
+}
 }
