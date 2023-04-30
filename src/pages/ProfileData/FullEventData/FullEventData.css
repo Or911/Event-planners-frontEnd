@@ -14,6 +14,11 @@
     box-shadow: -1px 1px 12px 2px #000000b8;
     
 }
+@media only screen and (max-width: 500px) {
+    .eventManagement{
+        grid-template-columns:auto;
+    }
+}
 .showFullEventBT{
     position: absolute;
     right: 150px;
@@ -46,8 +51,16 @@
 .ticketSection{
     border-style: solid; 
     border-radius: 5px;
-    /* padding: 5px; */
-    
-
     border-color: rgba(79, 78, 78, 0.869);
+}
+@media only screen and (max-width: 500px) {
+    .showFullEventBT{
+        position: relative;
+        right:115px;
+        top: 0px;
+        width: 80px;
+    }
+    .ticketSection{
+        width: 300px;
+    }
 }

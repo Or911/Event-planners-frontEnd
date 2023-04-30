@@ -5,16 +5,18 @@ import { eventDateFormatIL } from "../../utilities/eventDateFormat";
 
 export default function Ticket({ ticket }) {
 
+  const backgroundColor = ticket.isScanned ? '#90EE90' : 'white'
+
   const navigate = useNavigate();
   
   return (
-    <div className="ticket">
-      <img className="ticket-img" src={ticket.event.img} alt="Missing"></img>
+    <div className="ticket" style={{backgroundColor : backgroundColor}}>
+      <img className="ticket-img" src={ticket.event?.img} alt="Missing" onClick={()=>navigate(`/events/${ticket.event?._id}`)}></img>
       <div className="ticket-content">
         <div className="ticket-text">
-          <h1 onClick={()=>navigate(`/events/${ticket.event._id}`)}> {ticket.event.name} </h1>
-          <div> {eventDateFormatIL(ticket.event.eventDate)} </div>
-          <div> מיקום: {ticket.event.location} </div>
+          <h1> {ticket.event?.name} </h1>
+          <div> {eventDateFormatIL(ticket.event?.eventDate)} </div>
+          <div> מיקום: {ticket.event?.location} </div>
           <div> מחיר: {ticket.price}$ </div>
           <img className="ticket-qr" src={ticket.qrCode} alt="Missing"></img>
         </div>

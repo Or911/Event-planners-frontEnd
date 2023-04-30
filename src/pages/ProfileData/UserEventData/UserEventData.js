@@ -11,6 +11,7 @@ import { getTicketsOfEvent } from '../../../ServerAPI/UserDataAPI';
 
 
 
+
 export default function UserEventData({eventData}) {
   const [invited , updateInvited] = useState(0)
   const [balance , updatebalance] = useState(0)
@@ -44,7 +45,7 @@ export default function UserEventData({eventData}) {
         </div>
         <FullEventData eventData={eventData} />
         </div>
-        <SettingsBT/>
+        <SettingsBT eventId={eventData._id}/>
     </div>
   )
 }

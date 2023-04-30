@@ -2,7 +2,7 @@
   position: relative;
   box-sizing: border-box;
   width: 500px;
-  height: 450px;
+  height: 500px;
   margin: 150px auto 0;
   padding: 20px;
   border-radius: 10px;
@@ -73,7 +73,7 @@
 
 .ticket-img {
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.2;
   width: 98%;
   height: 98%;
   top: 5px;

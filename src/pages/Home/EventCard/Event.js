@@ -6,6 +6,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Heart from "react-animated-heart";
 import { useState , useEffect} from 'react'
 import axios from 'axios' 
+import { eventDateFormatIL } from '../../../utilities/eventDateFormat';
 
 export default function Event({ userEvent }) {
   // let link = `https://waze.com/ul?q=${userEvent?.location}&navigate=yes`
@@ -52,6 +53,7 @@ export default function Event({ userEvent }) {
       <div className='evenDetails' >
         <KeyboardArrowUpIcon />
         <p>{userEvent?.name} </p>
+        <p>{eventDateFormatIL(userEvent?.eventDate)} </p>
         <a href={link}>{userEvent?.location}<LocationOnIcon /></a>
       </div>
 
