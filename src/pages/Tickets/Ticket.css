@@ -96,8 +96,9 @@
     position: relative;
     width: 60%;
     height: 60%;
-    top: 50px;
+    top: 30px;
     right: 60px;
+    z-index: 20;
   }
   .ticket-text {
     width: auto;
