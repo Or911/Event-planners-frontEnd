@@ -9,6 +9,7 @@
     "@mui/joy": "^5.0.0-alpha.76",
     "@mui/lab": "^5.0.0-alpha.127",
     "@mui/material": "^5.12.1",
+    "@progress/kendo-react-form": "^5.13.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -21,8 +22,8 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
-    "source-map-loader": "^4.0.1",
     "react-web-qr-reader": "^1.0.4",
+    "source-map-loader": "^4.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

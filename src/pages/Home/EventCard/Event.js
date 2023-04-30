@@ -40,7 +40,6 @@ export default function Event({ userEvent }) {
   function doesLikeTheEvent(){
     if(userEvent.likes.includes(localStorage.getItem("userName"))){
       setClick(!isClick)
-      console.log("isClick"+isClick);
     }
   }
 

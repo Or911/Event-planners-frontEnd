@@ -10,7 +10,7 @@ import { TextField } from '@mui/material';
 import { SERVER_URL } from '../../utilities/conectsToAPIs';
 
 
-export default function CreateEvent({updateNotificationData}) {
+export default function CreateEvent({ updateNotificationData }) {
   const [name, setName] = useState("")
   const [entertainer, setEntertainer] = useState("")
   const [category, setCategory] = useState("")
@@ -38,7 +38,7 @@ export default function CreateEvent({updateNotificationData}) {
         location: location,
         eventDate: eventDate,
         dateCreated: dateCreated,
-         img: imgUrl,
+        img: imgUrl,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -47,10 +47,10 @@ export default function CreateEvent({updateNotificationData}) {
       updateNotificationData('יצירת האירוע עברה בהצלחה', 'success')
       console.log(data)
     })
-    .catch(err => {
-      updateNotificationData('יצירת האירוע נכשלה', 'error')
-      console.error(err)
-    })
+      .catch(err => {
+        updateNotificationData('יצירת האירוע נכשלה', 'error')
+        console.error(err)
+      })
 
     setName('');
     setEntertainer('');
@@ -61,14 +61,15 @@ export default function CreateEvent({updateNotificationData}) {
     setLocation('');
     setEventDate('');
     setDateCreated('');
+    setImage('');
     // document.getElementById('imgInput').reset()
   }
 
   return (
 
-    <div className='page event-create'>
+    <div className='page cardEvent'>
       <form >
-        <div className='createEvent'>
+        <div className=''>
           <ButtonBack />
           <div className='imgSection'>
             <div className="imgUplodform" onClick={() => document.querySelector(".input-field").click()}>
@@ -94,26 +95,32 @@ export default function CreateEvent({updateNotificationData}) {
                 <MdCloudUpload color='#1475cd' size={60} />
               }
             </div>
-            <div>
-              <h4> <TextField type="date" className='date' onChange={event => setEventDate(event.target.value)} value={eventDate} /></h4>
 
-              <h4><TextField id="outlined-basic" className='location' label="מיקום" type="text" onChange={event => setLocation(event.target.value)} value={location} /> </h4>
-            </div>
 
           </div>
+
+
           <br></br>
-          <TextField id="outlined-basic" label="שם" onChange={event => setName(event.target.value)} value={name} />
+          <TextField name='date' type="date" className='date' onChange={event => setEventDate(event.target.value)} value={eventDate} />
+          <br></br>
+          <br></br>
+          <TextField name='location' id="outlined-basic" className='location' label="מיקום" type="text" onChange={event => setLocation(event.target.value)} value={location} />
+          <br></br>
+          <br></br>
+          <TextField name='name' id="outlined-basic" label="שם" onChange={event => setName(event.target.value)} value={name} />
           <br></br>
           <br></br>
           <hr />
+          <br></br>
 
-          <TextField id="outlined-basic" label="בדרן" variant="outlined" onChange={event => setEntertainer(event.target.value)} value={entertainer} />
+          <TextField name='entertainer' id="outlined-basic" label="בדרן" variant="outlined" onChange={event => setEntertainer(event.target.value)} value={entertainer} />
           <br></br>
           <br></br>
-          <TextField id="outlined-basic" label="קטגוריה" onChange={event => setCategory(event.target.value)} value={category} />
+          <TextField name='category' id="outlined-basic" label="קטגוריה" onChange={event => setCategory(event.target.value)} value={category} />
           <br></br>
           <br></br>
           <TextField
+            name='description'
             label="תיאור"
             multiline
             minRows={2}
@@ -122,10 +129,9 @@ export default function CreateEvent({updateNotificationData}) {
             value={description} />
           <br></br>
           <br></br>
-          <hr />
-          <Button variant="outlined" className='buttonSubmitCreate' onClick={addEvent}>יצירת מופע</Button>
           <div className="price">
             <TextField
+            name='price'
               label="מחיר"
               type="number"
               id="outlined-basic"
@@ -134,8 +140,14 @@ export default function CreateEvent({updateNotificationData}) {
               value={price}
             />
           </div>
-        </div>
+          <br></br>
+          <hr />
+          <br></br>
 
+          <Button variant="outlined" className='buttonSubmitCreate' onClick={addEvent}>יצירת מופע</Button>
+
+
+        </div>
       </form>
 
     </div>
