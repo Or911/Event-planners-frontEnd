@@ -3,13 +3,13 @@ const URL_SERVER = `http://localhost:4000/`;
 
 function getEvents(category , date ) {
     
-    return axios.request({
-      method: "get",
-      url: URL_SERVER + "events",
-      params: {category : category , date : new Date(date).toISOString() , id : 'category'}
-    });
-  }
-
+  return axios.request({
+    method: "get",
+    url: URL_SERVER + "events",
+    params: {category : category , date : date , id : 'category'}
+  });
+  
+}
 function getEventData(idEvent) {
   return axios.request({
     method: "get",

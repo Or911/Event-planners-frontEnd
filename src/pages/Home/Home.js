@@ -8,8 +8,8 @@ export default function Home() {
   const [eventsData, setEventsData] = useState([]);
   const [eventsCategory, setEventsCategory] = useState(null);
   const [filterData, setFilterData] = useState({
-    categoryFilter: "",
-    dateFilter: null,
+    categoryFilter: '',
+    dateFilter: '',
   });
 
   useEffect(() => {
