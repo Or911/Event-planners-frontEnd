@@ -14,7 +14,7 @@ export default function Tickets() {
   }, []);
 
   return (
-    <div className="tickets page">
+    <div className="tickets">
       {tickets.map((ticket) =>(<Ticket key={ticket._id} ticket={ticket}/>))}
     </div>
   );
