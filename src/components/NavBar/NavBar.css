@@ -52,7 +52,7 @@
 .iconsBar h3{
     color: white;
      position: absolute;
-     right: -50px;
+     right: 20px;
     top: 5px; 
 }
 
@@ -60,7 +60,8 @@
     .iconsBar h3{
         color: white;
          position: relative;
-         right: -12px;
-        top: -15px; 
+         right: -10px;
+         /* margin-right: 0px; */
+        /* top: -15px;  */
     }
   }
