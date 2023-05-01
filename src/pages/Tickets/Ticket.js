@@ -32,7 +32,7 @@ export default function Ticket({ ticket }) {
           {/* <h1> {ticket.event?.name} </h1>
           <div> {eventDateFormatIL(ticket.event?.eventDate)} </div>
           <div> מיקום: {ticket.event?.location} </div> */}
-          <p> {ticket.price}$ </p>
+          <p> {ticket.price}₪ </p>
           <img className="ticket-qr" src={ticket.qrCode} alt="Missing"></img>
         </div>
       </div>

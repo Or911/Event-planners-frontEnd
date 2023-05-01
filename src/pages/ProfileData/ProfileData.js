@@ -31,7 +31,7 @@ export default function ProfileData() {
               <h3>סוג משתמש: <span>{userEvents[0] ? "מנהל" : "רגיל"}</span></h3>
               <h3> סטטוס:<span>פעיל</span> </h3>
               <h3> מספר מופעים שפעילים: <span>{userEvents.length}</span></h3>
-              <h3> סכום הכנסות: <span>{10} </span></h3>
+              <h3> סכום הכנסות: <span>₪{1560} </span></h3>
             </div>
             <div>
               <img  src={graf}/>

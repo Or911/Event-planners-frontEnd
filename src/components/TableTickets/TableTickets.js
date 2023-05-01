@@ -44,7 +44,7 @@ export default function TableTickets({tickets }) {
             <StyledTableRow key={ticket._id} >
               <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}>כרטיס: {index+1}</StyledTableCell >
               <StyledTableCell align="right" className={ticket.isScanned?'usedTicket removeInMobile':'removeInMobile'}>מזהה כרטיס:  {ticket._id}</StyledTableCell >
-              <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}>מחיר כרטיס:{ticket.price}</StyledTableCell>
+              <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}>מחיר כרטיס:₪{ticket.price}</StyledTableCell>
               <StyledTableCell align="right" className={ticket.isScanned?'usedTicket':null}><img src={ticket.qrCode}  alt='QRcode' /></StyledTableCell>
             </StyledTableRow>
           ))}

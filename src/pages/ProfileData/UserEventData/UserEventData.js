@@ -39,7 +39,7 @@ export default function UserEventData({eventData}) {
         <Badge badgeContent={invited} color="primary">
             <GroupsIcon fontSize='large'/>
           </Badge>
-        <Badge badgeContent={`$${balance}`} color="success">
+        <Badge badgeContent={`₪${balance}`} color="success">
           <MonetizationOnIcon fontSize='large'/>
         </Badge>
         </div>

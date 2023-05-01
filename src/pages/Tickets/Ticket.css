@@ -39,6 +39,7 @@
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  padding-right: 30px;
 }
 .ticket-text {
   position: absolute;
@@ -93,13 +94,14 @@
     width: 90%;
   }
   .ticket-text div{
-    padding: 0;
+    padding: 0px;
+    margin-right: 10px;
   }
   .ticket-qr{
     position: relative;
     width: 60%;
     height: 60%;
-    top: 30px;
+    /* top: 30px; */
     right: 60px;
     z-index: 20;
   }
